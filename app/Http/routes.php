@@ -19,5 +19,19 @@ Route::get('/', [
 
 Route::get('/backend', [
     'as' => 'backend',
+    'middleware' => 'auth',
     'uses' => 'PagesController@backend'
+]);
+
+/* Session */
+Route::get('/login', [
+    'as' => 'login',
+    'middleware' => 'guest',
+    'uses' => 'SessionsController@create'
+]);
+
+Route::post('/login', [
+    'as' => 'login',
+    'middleware' => 'guest',
+    'uses' => 'SessionsController@store'
 ]);
