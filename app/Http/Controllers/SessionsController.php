@@ -40,11 +40,10 @@ class SessionsController extends Controller
     {
         if (Auth::attempt($request->only('username', 'password'), true))
         {
-            flash()->success('Welcome back '.Auth::user()->username.'!');
             return redirect()->intended();
         }
         else{
-            flash()->error('Wrong password.');
+            flash()->error('Wrong password or username.');
             return redirect()->route('login');
         }
         flash()->error('Sorry! Please try again.');
@@ -90,8 +89,9 @@ class SessionsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy()
     {
-        //
+        Auth::logout();
+        return redirect(route('home'));
     }
 }

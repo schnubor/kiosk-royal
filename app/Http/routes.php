@@ -35,3 +35,9 @@ Route::post('/login', [
     'middleware' => 'guest',
     'uses' => 'SessionsController@store'
 ]);
+
+Route::get('/logout', [
+    'as' => 'logout',
+    'middleware' => 'auth',
+    'uses' => 'SessionsController@destroy'
+]);
