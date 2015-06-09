@@ -26,7 +26,7 @@ Login
         </div>
         <div class="row text-center">
             <small >
-                <a href="route('home')" style="color: #ddd;">Back to home page.</a>
+                <a href="{{ route('home') }}" style="color: #ddd;">Back to home page.</a>
             </small>
         </div>
     </div>
