@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.coffee"],"names":[],"mappings":"AAAA;EAAA,OAAO,CAAC,GAAR,CAAY,kBAAZ;AAAA","file":"app.js","sourceRoot":"/source/","sourcesContent":["console.log 'CHKO Boilerplate'"]}
