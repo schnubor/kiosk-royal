@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class PagesController extends Controller
 {
@@ -22,7 +23,9 @@ class PagesController extends Controller
      */
     public function backend()
     {
-        return view('pages/backend');
+        $users = User::all();
+        return view('pages/backend')
+            ->with('users', $users);
     }
     
 }

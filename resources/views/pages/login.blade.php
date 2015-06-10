@@ -18,7 +18,7 @@ Login
                     <div class="form-group">
                         {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required']) !!}
                     </div>
-                    <div class="text-center">
+                    <div>
                         {!! Form::submit('Sign in', ['class' => 'btn btn-primary pull-right']) !!}
                     </div>
                 {!! Form::close() !!}

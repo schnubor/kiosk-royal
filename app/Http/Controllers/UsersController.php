@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Http\Requests\CreateUserRequest;
 use App\Http\Controllers\Controller;
-
+use App\User;
 class UsersController extends Controller
 {
     /**
@@ -34,9 +35,14 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(CreateUserRequest $request)
     {
-        //
+        User::create([
+            'username' => $request->input('username'),
+            'password' => bcrypt($request->input('password'))
+        ]);
+
+        return redirect(route('backend'));
     }
 
     /**

@@ -41,3 +41,16 @@ Route::get('/logout', [
     'middleware' => 'auth',
     'uses' => 'SessionsController@destroy'
 ]);
+
+/* User */
+Route::post('/user/create', [
+    'as' => 'post.create.user',
+    'middleware' => 'auth',
+    'uses' => 'UsersController@store'
+]);
+
+Route::delete('/user/{id}/delete', [
+    'as' => 'delete.user',
+    'middleware' => 'auth',
+    'uses' => 'UsersController@destroy'
+]);
