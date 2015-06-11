@@ -17,7 +17,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        return User::all();
     }
 
     /**
@@ -27,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -86,6 +86,6 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return $id;
     }
 }

@@ -16,25 +16,25 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="panel panel-default">
+                <div id="admins" class="panel panel-default">
                     <div class="panel-heading">
                         <strong>Admins</strong>
                     </div>
                     <div class="panel-body">
                         <div class="col-md-6">
                             <div class="well">
-                                {!! Form::open(['route' => 'post.create.user', 'method' => 'POST', 'style' => 'margin-bottom: 0;']) !!}
+                                {!! Form::open(['route' => 'post.create.user', 'method' => 'POST', 'style' => 'margin-bottom: 0;', 'v-on' => 'onSubmitForm ']) !!}
                                     <div class="form-group">
-                                        {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required']) !!}
+                                        {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required', 'v-model' => 'newAdmin.username']) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required']) !!}
+                                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required', 'v-model' => 'newAdmin.password']) !!}
                                     </div>
                                     <div class="form-group">
                                         {!! Form::password('password_again', ['class' => 'form-control', 'placeholder' => 'Repeat Password', 'required' => 'required']) !!}
                                     </div>
                                     <div class="text-right">
-                                        {!! Form::submit('Add user', ['class' => 'btn btn-primary']) !!}
+                                        {!! Form::submit('Add user', ['class' => 'btn btn-primary', 'v-attr' => 'disabled:errors']) !!}
                                     </div>
                                 {!! Form::close() !!}
                             </div>
@@ -44,20 +44,20 @@
                                 <thead>
                                     <tr>
                                         <th>username</th>
-                                        <th>actions</th>
+                                        <th class="text-right">actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($users as $user)
-                                        <tr>
-                                            <td>{{$user->username}}</td>
-                                            <td>
-                                                {!! Form::open(['route' => ['delete.user', $user->id], 'method' => 'DELETE', 'style' => 'margin-bottom: 0;']) !!}
-                                                    {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
-                                                {!! Form::close() !!}
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                    <tr v-repeat="admins">
+                                        <td>@{{ username }}</td>
+                                        <td class="text-right">
+                                            <form method="POST" action="http://localhost:8000/user/@{{ id }}/delete" accept-charset="UTF-8" style="margin-bottom: 0;">
+                                                <input name="_method" type="hidden" value="DELETE">
+                                                {!! Form::token() !!}
+                                                {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
+                                            </form>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>

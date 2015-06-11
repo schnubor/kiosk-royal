@@ -24,32 +24,37 @@ Route::get('/backend', [
 ]);
 
 /* Session */
-Route::get('/login', [
+get('/login', [
     'as' => 'login',
     'middleware' => 'guest',
     'uses' => 'SessionsController@create'
 ]);
 
-Route::post('/login', [
+post('/login', [
     'as' => 'login',
     'middleware' => 'guest',
     'uses' => 'SessionsController@store'
 ]);
 
-Route::get('/logout', [
+get('/logout', [
     'as' => 'logout',
     'middleware' => 'auth',
     'uses' => 'SessionsController@destroy'
 ]);
 
 /* User */
-Route::post('/user/create', [
+get('/user', [
+    'as' => 'user',
+    'uses' => 'UsersController@index'
+]);
+
+post('/user/create', [
     'as' => 'post.create.user',
     'middleware' => 'auth',
     'uses' => 'UsersController@store'
 ]);
 
-Route::delete('/user/{id}/delete', [
+delete('/user/{id}/delete', [
     'as' => 'delete.user',
     'middleware' => 'auth',
     'uses' => 'UsersController@destroy'

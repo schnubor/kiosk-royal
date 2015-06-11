@@ -18,9 +18,12 @@ elixir(function(mix) {
 
     // copy all bower files
     mix.copy('bower_components/jquery/dist/jquery.js', 'public/js/vendor/jquery.js');
+    mix.copy('bower_components/underscore/underscore-min.js', 'public/js/vendor/underscore-min.js');
     mix.copy('bower_components/normalize.css/normalize.css', 'public/css/vendor/normalize.css');
     mix.copy('bower_components/bootstrap/dist/css/bootstrap.css', 'public/css/vendor/bootstrap.css');
     mix.copy('bower_components/bootstrap/dist/js/bootstrap.js', 'public/js/vendor/bootstrap.js');
+    mix.copy('bower_components/vue/dist/vue.min.js', 'public/js/vendor/vue.min.js');
+    mix.copy('bower_components/vue-resource/dist/vue-resource.min.js', 'public/js/vendor/vue-resource.min.js');
     mix.copy('bower_components/fontawesome/fonts', 'public/css/fonts');
     mix.copy('bower_components/fontawesome/css/font-awesome.min.css', 'public/css/vendor/font-awesome.min.css');
 
@@ -32,8 +35,12 @@ elixir(function(mix) {
 
     mix.scripts([                       // concat scripts
         'vendor/jquery.js',
+        'vendor/underscore-min.js',
         'vendor/bootstrap.js',
-        'app.js'
+        'vendor/vue.min.js',
+        'vendor/vue-resource.min.js',
+        'app.js',
+        'backend.js'
     ], null, 'public/js');
 
     mix.version('public/css/all.css');  // versioning
