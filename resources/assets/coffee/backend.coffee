@@ -5,18 +5,19 @@ new Vue
         newAdmin:
             username: ''
             password: ''
+            password_again: ''
 
     computed:
         errors: ->
-            ret = true
-            _.each newAdmin, (admin) ->
-                ret = false if admin.username
-            return ret
+            for key of @newAdmin
+                unless @newAdmin[key]
+                    return true
+            return false
 
     ready: ->
-        this.fetchUsers()
+        @fetchUsers()
 
     methods:
         fetchUsers: ->
-            this.$http.get '/user', (admins) ->
-                this.$set('admins', admins)
+            @$http.get '/user', (admins) ->
+                @$set('admins', admins)

@@ -11553,19 +11553,19 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
     data: {
       newAdmin: {
         username: '',
-        password: ''
+        password: '',
+        password_again: ''
       }
     },
     computed: {
       errors: function() {
-        var ret;
-        ret = true;
-        _.each(newAdmin, function(admin) {
-          if (admin.username) {
-            return ret = false;
+        var key;
+        for (key in this.newAdmin) {
+          if (!this.newAdmin[key]) {
+            return true;
           }
-        });
-        return ret;
+        }
+        return false;
       }
     },
     ready: function() {

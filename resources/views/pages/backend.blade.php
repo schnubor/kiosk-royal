@@ -31,7 +31,7 @@
                                         {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required', 'v-model' => 'newAdmin.password']) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::password('password_again', ['class' => 'form-control', 'placeholder' => 'Repeat Password', 'required' => 'required']) !!}
+                                        {!! Form::password('password_again', ['class' => 'form-control', 'placeholder' => 'Repeat Password', 'required' => 'required', 'v-model' => 'newAdmin.password_again']) !!}
                                     </div>
                                     <div class="text-right">
                                         {!! Form::submit('Add user', ['class' => 'btn btn-primary', 'v-attr' => 'disabled:errors']) !!}
