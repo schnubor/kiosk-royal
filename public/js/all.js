@@ -11598,6 +11598,15 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
         } else {
           return this.passwordError = true;
         }
+      },
+      onDeleteForm: function(e) {
+        var id;
+        e.preventDefault();
+        id = $('input#userId').val();
+        console.log(id);
+        return this.$http.post('/user/delete', {
+          'id': id
+        });
       }
     }
   });

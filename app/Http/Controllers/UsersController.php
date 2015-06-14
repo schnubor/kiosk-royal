@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\DeleteUserRequest;
 use App\Http\Controllers\Controller;
 use App\User;
 class UsersController extends Controller
@@ -41,8 +42,7 @@ class UsersController extends Controller
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password'))
         ]);
-
-        return redirect(route('backend'));
+        return 'User created successfully.';
     }
 
     /**
@@ -84,8 +84,12 @@ class UsersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(DeleteUserRequest $request)
     {
-        return $id;
+        $user = User::find($request->input('id'));
+        //dd($request->input('id'));
+        $user->delete();
+
+        return 'User deleted successfully.';
     }
 }

@@ -46,3 +46,9 @@ new Vue
             else
                 @passwordError = true
 
+        onDeleteForm: (e) ->
+            e.preventDefault()
+            id = $('input#userId').val()
+            console.log id
+            @$http.post '/user/delete',
+                'id': id

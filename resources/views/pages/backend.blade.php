@@ -23,7 +23,7 @@
                     <div class="panel-body">
                         <div class="col-md-6">
                             <div class="well">
-                                <form method="POST" v-on="submit:onSubmitForm">
+                                <form method="POST" v-on="submit:onSubmitForm" accept-charset="UTF-8" style="margin-bottom: 0;">
                                     {!! Form::token() !!}
                                     <div class="form-group">
                                         {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required', 'v-model' => 'newAdmin.username']) !!}
@@ -54,9 +54,10 @@
                                     <tr v-repeat="admins">
                                         <td>@{{ username }}</td>
                                         <td class="text-right">
-                                            <form method="POST" action="http://localhost:8000/user/@{{ id }}/delete" accept-charset="UTF-8" style="margin-bottom: 0;">
+                                            <form method="POST" accept-charset="UTF-8" style="margin-bottom: 0;" v-on="submit:onDeleteForm">
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 {!! Form::token() !!}
+                                                <input id="userId" name="userId" type="hidden" value="@{{ id }}">
                                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
                                             </form>
                                         </td>

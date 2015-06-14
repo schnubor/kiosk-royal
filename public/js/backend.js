@@ -49,6 +49,15 @@
         } else {
           return this.passwordError = true;
         }
+      },
+      onDeleteForm: function(e) {
+        var id;
+        e.preventDefault();
+        id = $('input#userId').val();
+        console.log(id);
+        return this.$http.post('/user/delete', {
+          'id': id
+        });
       }
     }
   });
