@@ -26,7 +26,7 @@ class CreateUserRequest extends Request
         return [
             'username' => 'required|unique:users',
             'password' => 'required',
-            'password' => 'required|same:password'
+            'password_again' => 'required|same:password'
         ];
     }
 }

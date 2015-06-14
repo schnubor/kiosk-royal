@@ -11548,6 +11548,8 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
 
 //# sourceMappingURL=app.js.map
 (function() {
+  Vue.http.headers.common['X-CSRF-TOKEN'] = $('#CSRFtoken').attr('value');
+
   new Vue({
     el: '#admins',
     data: {
@@ -11555,7 +11557,9 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
         username: '',
         password: '',
         password_again: ''
-      }
+      },
+      submitted: false,
+      passwordError: false
     },
     computed: {
       errors: function() {
@@ -11576,6 +11580,24 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
         return this.$http.get('/user', function(admins) {
           return this.$set('admins', admins);
         });
+      },
+      onSubmitForm: function(e) {
+        var admin;
+        e.preventDefault();
+        admin = this.newAdmin;
+        if (admin.password === admin.password_again) {
+          this.admins.push(admin);
+          this.newAdmin = {
+            name: '',
+            password: '',
+            password_again: ''
+          };
+          this.$http.post('/user/create', admin);
+          this.submitted = true;
+          return this.passwordError = false;
+        } else {
+          return this.passwordError = true;
+        }
       }
     }
   });

@@ -23,7 +23,8 @@
                     <div class="panel-body">
                         <div class="col-md-6">
                             <div class="well">
-                                {!! Form::open(['route' => 'post.create.user', 'method' => 'POST', 'style' => 'margin-bottom: 0;', 'v-on' => 'onSubmitForm ']) !!}
+                                <form method="POST" v-on="submit:onSubmitForm">
+                                    {!! Form::token() !!}
                                     <div class="form-group">
                                         {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required', 'v-model' => 'newAdmin.username']) !!}
                                     </div>
@@ -33,10 +34,12 @@
                                     <div class="form-group">
                                         {!! Form::password('password_again', ['class' => 'form-control', 'placeholder' => 'Repeat Password', 'required' => 'required', 'v-model' => 'newAdmin.password_again']) !!}
                                     </div>
+                                    <div class="alert alert-success" v-if="submitted"><i class="fa fa-fw fa-check"></i> User added successful.</div>
+                                    <div class="alert alert-danger" v-if="passwordError"><i class="fa fa-fw fa-warning"></i> Passwords must match.</div>
                                     <div class="text-right">
-                                        {!! Form::submit('Add user', ['class' => 'btn btn-primary', 'v-attr' => 'disabled:errors']) !!}
+                                        {!! Form::button('Add user', ['type' => 'submit', 'class' => 'btn btn-primary', 'v-attr' => 'disabled:errors']) !!}
                                     </div>
-                                {!! Form::close() !!}
+                                </form>
                             </div>
                         </div>
                         <div class="col-md-6">

@@ -1,4 +1,6 @@
 (function() {
+  Vue.http.headers.common['X-CSRF-TOKEN'] = $('#CSRFtoken').attr('value');
+
   new Vue({
     el: '#admins',
     data: {
@@ -6,7 +8,9 @@
         username: '',
         password: '',
         password_again: ''
-      }
+      },
+      submitted: false,
+      passwordError: false
     },
     computed: {
       errors: function() {
@@ -27,6 +31,24 @@
         return this.$http.get('/user', function(admins) {
           return this.$set('admins', admins);
         });
+      },
+      onSubmitForm: function(e) {
+        var admin;
+        e.preventDefault();
+        admin = this.newAdmin;
+        if (admin.password === admin.password_again) {
+          this.admins.push(admin);
+          this.newAdmin = {
+            name: '',
+            password: '',
+            password_again: ''
+          };
+          this.$http.post('/user/create', admin);
+          this.submitted = true;
+          return this.passwordError = false;
+        } else {
+          return this.passwordError = true;
+        }
       }
     }
   });
