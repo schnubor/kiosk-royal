@@ -57,7 +57,7 @@
                                             <form method="POST" accept-charset="UTF-8" style="margin-bottom: 0;" v-on="submit:onDeleteForm">
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 {!! Form::token() !!}
-                                                <input id="userId" name="userId" type="hidden" value="@{{ id }}">
+                                                <input type="hidden" name="id" value="@{{ id }}">
                                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
                                             </form>
                                         </td>

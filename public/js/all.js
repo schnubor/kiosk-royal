@@ -11578,7 +11578,8 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
     methods: {
       fetchUsers: function() {
         return this.$http.get('/user', function(admins) {
-          return this.$set('admins', admins);
+          this.$set('admins', admins);
+          return console.log(this.admins);
         });
       },
       onSubmitForm: function(e) {
@@ -11587,6 +11588,7 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
         admin = this.newAdmin;
         if (admin.password === admin.password_again) {
           this.admins.push(admin);
+          console.log(this.admins);
           this.newAdmin = {
             name: '',
             password: '',
@@ -11600,13 +11602,12 @@ this.expression=e,this.cbs=[i],this.id=++u,this.active=!0,n=n||{},this.deep=!!n.
         }
       },
       onDeleteForm: function(e) {
-        var id;
+        var data;
         e.preventDefault();
-        id = $('input#userId').val();
-        console.log(id);
-        return this.$http.post('/user/delete', {
-          'id': id
-        });
+        data = {
+          id: '1'
+        };
+        return this.$http.post('/user/delete', data);
       }
     }
   });

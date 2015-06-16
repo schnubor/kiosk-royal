@@ -87,7 +87,6 @@ class UsersController extends Controller
     public function destroy(DeleteUserRequest $request)
     {
         $user = User::find($request->input('id'));
-        //dd($request->input('id'));
         $user->delete();
 
         return 'User deleted successfully.';

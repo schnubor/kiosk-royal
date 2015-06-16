@@ -25,6 +25,7 @@ new Vue
         fetchUsers: ->
             @$http.get '/user', (admins) ->
                 @$set('admins', admins)
+                console.log @admins
 
         onSubmitForm: (e) ->
             e.preventDefault()
@@ -33,6 +34,7 @@ new Vue
             if admin.password is admin.password_again
                 # update admins list
                 @admins.push admin
+                console.log @admins
                 # reset inputs of form
                 @newAdmin = 
                     name: ''
@@ -48,7 +50,8 @@ new Vue
 
         onDeleteForm: (e) ->
             e.preventDefault()
-            id = $('input#userId').val()
-            console.log id
-            @$http.post '/user/delete',
-                'id': id
+            data = 
+                id: '1' # get value from input[name="id"]
+            # remove admin with id from admins array
+            # send ajax request to delete admin
+            @$http.post '/user/delete', data
