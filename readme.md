@@ -10,7 +10,7 @@ Provides a simple `/backend` page with login and simple user management to add o
 4. Set default user/pass in your environment variables (.env): `ADMIN_NAME` and `ADMIN_PASS`
 5. `php artisan migrate`
 6. `php artisan serve`
-7. `Enjoy!`
+7. Enjoy!
 
 ### License
 
