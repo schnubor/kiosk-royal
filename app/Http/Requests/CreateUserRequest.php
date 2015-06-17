@@ -24,8 +24,8 @@ class CreateUserRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'required|unique:users',
-            'password' => 'required',
+            'username' => 'required|max:255|unique:users',
+            'password' => 'required|max:60',
             'password_again' => 'required|same:password'
         ];
     }

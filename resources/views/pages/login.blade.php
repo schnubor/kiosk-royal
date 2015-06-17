@@ -11,6 +11,8 @@ Login
         </div>
         <div class="row">
             <div class="col-md-4 col-md-offset-4 well">
+                {{-- Flash message --}}
+                @include('flash::message')
                 {!! Form::open(['route' => 'login', 'method' => 'POST', 'style' => 'margin-bottom: 0;']) !!}
                     <div class="form-group">
                         {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required']) !!}

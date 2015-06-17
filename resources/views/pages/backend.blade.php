@@ -14,32 +14,32 @@
         </div>
     </div>
     <div class="container">
+        {{------------------ Admins ------------------}}
         <div class="row">
             <div class="col-md-12">
-                <div id="admins" class="panel panel-default">
+                <div class="panel panel-default">
                     <div class="panel-heading">
                         <strong>Admins</strong>
                     </div>
                     <div class="panel-body">
                         <div class="col-md-6">
                             <div class="well">
-                                <form method="POST" v-on="submit:onSubmitForm" accept-charset="UTF-8" style="margin-bottom: 0;">
-                                    {!! Form::token() !!}
+                                {{-- Flash message --}}
+                                @include('flash::message')
+                                {!! Form::open(['route' => 'post.create.user', 'style' => 'margin-bottom: 0;']) !!}
                                     <div class="form-group">
-                                        {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required', 'v-model' => 'newAdmin.username']) !!}
+                                        {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required']) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required', 'v-model' => 'newAdmin.password']) !!}
+                                        {!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Password', 'required' => 'required',]) !!}
                                     </div>
                                     <div class="form-group">
-                                        {!! Form::password('password_again', ['class' => 'form-control', 'placeholder' => 'Repeat Password', 'required' => 'required', 'v-model' => 'newAdmin.password_again']) !!}
+                                        {!! Form::password('password_again', ['class' => 'form-control', 'placeholder' => 'Repeat Password', 'required' => 'required']) !!}
                                     </div>
-                                    <div class="alert alert-success" v-if="submitted"><i class="fa fa-fw fa-check"></i> User added successful.</div>
-                                    <div class="alert alert-danger" v-if="passwordError"><i class="fa fa-fw fa-warning"></i> Passwords must match.</div>
                                     <div class="text-right">
-                                        {!! Form::button('Add user', ['type' => 'submit', 'class' => 'btn btn-primary', 'v-attr' => 'disabled:errors']) !!}
+                                        {!! Form::button('Add user', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
                                     </div>
-                                </form>
+                                {!! Form::close() !!}
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -51,17 +51,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-repeat="admins">
-                                        <td>@{{ username }}</td>
-                                        <td class="text-right">
-                                            <form method="POST" accept-charset="UTF-8" style="margin-bottom: 0;" v-on="submit:onDeleteForm">
-                                                <input name="_method" type="hidden" value="DELETE">
-                                                {!! Form::token() !!}
-                                                <input type="hidden" name="id" value="@{{ id }}">
-                                                {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
-                                            </form>
-                                        </td>
-                                    </tr>
+                                    @foreach($users as $user)
+                                        <tr>
+                                            <td>{{ $user->username }}</td>
+                                            <td class="text-right">
+                                                {!! Form::open(['route' => ['delete.user', $user->id], 'style' => 'margin-bottom: 0;']) !!}
+                                                    <input name="_method" type="hidden" value="DELETE">
+                                                    {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger']) !!}
+                                                {!! Form::close() !!}
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>

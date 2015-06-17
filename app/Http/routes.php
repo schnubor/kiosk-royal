@@ -54,7 +54,7 @@ post('/user/create', [
     'uses' => 'UsersController@store'
 ]);
 
-post('/user/delete', [
+delete('/user/{id}/delete', [
     'as' => 'delete.user',
     'middleware' => 'auth',
     'uses' => 'UsersController@destroy'

@@ -23,7 +23,7 @@ class PagesController extends Controller
      */
     public function backend()
     {
-        $users = User::all();
+        $users = User::where('id', '<>', 1)->get();
         return view('pages/backend')
             ->with('users', $users);
     }

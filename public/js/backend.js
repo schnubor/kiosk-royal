@@ -51,14 +51,6 @@
         } else {
           return this.passwordError = true;
         }
-      },
-      onDeleteForm: function(e) {
-        var data;
-        e.preventDefault();
-        data = {
-          id: '1'
-        };
-        return this.$http.post('/user/delete', data);
       }
     }
   });
