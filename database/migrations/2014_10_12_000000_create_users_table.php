@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
         });
 
         User::firstOrCreate([
-            'username' => 'admin',
+            'username' => env('ADMIN_USER', 'admin'),
             'password' => bcrypt(env('ADMIN_PASS', 'admin'))
         ]);
     }

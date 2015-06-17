@@ -37,10 +37,16 @@ class UsersController extends Controller
      */
     public function store(CreateUserRequest $request)
     {
-        User::create([
+        $user = User::create([
             'username' => $request->input('username'),
             'password' => bcrypt($request->input('password'))
         ]);
+        if($user){
+            flash()->success('Admin created successfully!');
+        }
+        else{
+            flash()->error('Oops! Something went wrong.');
+        }
         return redirect(route('backend'));
     }
 
@@ -85,9 +91,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
-        $user->delete();
-
+        if($id != 1){
+            $user = User::find($id);
+            $user->delete();
+        }
         return redirect(route('backend'));
     }
 }
