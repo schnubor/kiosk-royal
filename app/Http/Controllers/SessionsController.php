@@ -40,7 +40,7 @@ class SessionsController extends Controller
     {
         if (Auth::attempt($request->only('username', 'password'), true))
         {
-            return redirect()->intended();
+            return redirect()->intended('/backend');
         }
         else{
             flash()->error('Wrong password or username.');

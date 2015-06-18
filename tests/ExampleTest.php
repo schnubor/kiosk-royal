@@ -7,13 +7,16 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ExampleTest extends TestCase
 {
     /**
-     * A basic functional test example.
+     * Login test.
      *
      * @return void
      */
-    public function testBasicExample()
+    public function testLogin()
     {
-        $this->visit('/')
-             ->see('Boilerplate');
+        $this->visit('/login')
+             ->type(env('ADMIN_USER','admin'), 'username')
+             ->type(env('ADMIN_PASS','admin'), 'password')
+             ->press('Sign in')
+             ->seePageIs('/backend');
     }
 }
