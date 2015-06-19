@@ -7,6 +7,18 @@
 @section('content')
     <div class="jumbotron">
         <div class="container">
+            {{-- Flash message --}}
+            @include('flash::message')
+            @if($errors->any())
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
+            @endif
             <h1>Backend</h1>
             <p class="lead">Welcome back {{ Auth::user()->username }}.</p>
             <a href="{{ route('logout') }}" class="btn btn-sm btn-default"><i class="fa fa-fw fa-sign-out"></i> Logout</a>

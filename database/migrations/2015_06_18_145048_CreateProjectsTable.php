@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('description');
             $table->string('color');
             $table->string('bgcolor');
-            $table->integer('position')->unsigned();
+            $table->integer('position')->unsigned()->unique();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
                   ->references('id')

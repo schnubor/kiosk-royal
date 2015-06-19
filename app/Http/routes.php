@@ -59,3 +59,29 @@ delete('/user/{id}/delete', [
     'middleware' => 'auth',
     'uses' => 'UsersController@destroy'
 ]);
+
+/* category */
+post('/category/create', [
+    'as' => 'post.create.category',
+    'middleware' => 'auth',
+    'uses' => 'CategoriesController@store'
+]);
+
+delete('/category/{id}/delete', [
+    'as' => 'delete.category',
+    'middleware' => 'auth',
+    'uses' => 'CategoriesController@destroy'
+]);
+
+/* project */
+post('/project/create', [
+    'as' => 'post.create.project',
+    'middleware' => 'auth',
+    'uses' => 'ProjectsController@store'
+]);
+
+delete('/project/{id}/delete', [
+    'as' => 'delete.project',
+    'middleware' => 'auth',
+    'uses' => 'ProjectsController@destroy'
+]);

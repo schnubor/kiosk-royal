@@ -5,7 +5,7 @@
                 <strong>images</strong>
             </div>
             <div class="panel-body">
-            images
+                images
             </div>
         </div>
     </div>

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CreateCategoryRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Category;
 
 class CategoriesController extends Controller
 {
@@ -34,9 +35,20 @@ class CategoriesController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(CreateCategoryRequest $request)
     {
-        //
+        $category = Category::create([
+            'title' => $request->input('title'),
+            'position' => $request->input('position'),
+            'color' => $request->input('color')
+        ]);
+        if($category){
+            flash()->success('Category created successfully!');
+        }
+        else{
+            flash()->error('Oops! Something went wrong.');
+        }
+        return redirect(route('backend'));
     }
 
     /**
@@ -80,6 +92,10 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $category->delete();
+
+        flash()->info('Category deleted successfully.');
+        return redirect(route('backend'));
     }
 }

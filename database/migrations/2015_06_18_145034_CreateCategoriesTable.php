@@ -16,7 +16,7 @@ class CreateCategoriesTable extends Migration
             $table->increments('id');
             $table->string('title',255)->unique();
             $table->string('color');
-            $table->integer('position')->unsigned();
+            $table->integer('position')->unsigned()->unique();
             $table->timestamps();
         });
     }

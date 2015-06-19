@@ -93,6 +93,7 @@ class UsersController extends Controller
             $user = User::find($id);
             $user->delete();
         }
+        flash()->info('User deleted successfully.');
         return redirect(route('backend'));
     }
 }
