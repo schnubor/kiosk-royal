@@ -15,15 +15,14 @@
                                 <div class="form-group">
                                     <select name="position" id="position" class="form-control">
                                         <option disabled selected>Choose position</option>
-                                        <option value="1">Position 1</option>
-                                        <option value="2">Position 2</option>
-                                        <option value="3">Position 3</option>
+                                        @for($i = 1; $i <= $categories->count()+1; $i++)
+                                            <option value="{{ $i }}">Position {{ $i }}</option>
+                                        @endfor
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="color">Font color</label>
-                                    <input type="color" class="form-control" value="#FF0000">
-                                    {!! Form::hidden('color') !!}
+                                    <input type="color" class="form-control" value="#000000" name="color">
                                 </div>
                                 <div class="text-right">
                                     {!! Form::button('Add category', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
@@ -48,8 +47,8 @@
                                         <td>{{ $category->position }}</td>
                                         <td>{{ $category->color }}</td>
                                         <td class="text-right">
-                                            <button class="btn btn-default"><i class="fa fa-edit"></i></button>
-                                            {!! Form::open(['route' => ['delete.category', $category->id], 'style' => 'margin-bottom: 0;', 'onsubmit'=>'return confirm("Really want to delete '.$category->title.'?");']) !!}
+                                            <button class="btn btn-default" data-toggle="modal" data-target="#categoryModal"><i class="fa fa-edit"></i></button>
+                                            {!! Form::open(['route' => ['delete.category', $category->id], 'style' => 'margin-bottom: 0; display: inline-block;', 'onsubmit'=>'return confirm("Really want to delete '.$category->title.'?");']) !!}
                                                 <input name="_method" type="hidden" value="DELETE">
                                                 {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-default']) !!}
                                             {!! Form::close() !!}

@@ -31,6 +31,7 @@
 
         {{------------------ Categories ------------------}}
         @include('partials.backend.categories')
+        @include('partials.backend.modals.category')
 
         {{------------------ Projects ------------------}}
         @include('partials.backend.projects')
