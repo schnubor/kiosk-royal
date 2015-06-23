@@ -35,6 +35,7 @@
 
         {{------------------ Projects ------------------}}
         @include('partials.backend.projects')
+        @include('partials.backend.modals.project')
 
         {{------------------ Images ------------------}}
         @include('partials.backend.images')

@@ -45,7 +45,7 @@
                                     <tr>
                                         <td>{{ $category->title }}</td>
                                         <td>{{ $category->position }}</td>
-                                        <td>{{ $category->color }}</td>
+                                        <td><span style="color: {{ $category->color }};">&#9679;</span> {{ $category->color }}</td>
                                         <td class="text-right">
                                             <button class="btn btn-default" data-toggle="modal" data-target="#categoryModal"><i class="fa fa-edit"></i></button>
                                             {!! Form::open(['route' => ['delete.category', $category->id], 'style' => 'margin-bottom: 0; display: inline-block;', 'onsubmit'=>'return confirm("Really want to delete '.$category->title.'?");']) !!}

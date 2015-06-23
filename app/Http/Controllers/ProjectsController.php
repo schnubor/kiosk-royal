@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\CreateProjectRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Project;
 
 class ProjectsController extends Controller
 {
@@ -34,9 +35,23 @@ class ProjectsController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(CreateProjectRequest $request)
     {
-        //
+        $project = Project::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'category_id' => $request->input('category_id'),
+            'position' => $request->input('position'),
+            'color' => $request->input('color'),
+            'bgcolor' => $request->input('bgcolor')
+        ]);
+        if($project){
+            flash()->success('Project created successfully!');
+        }
+        else{
+            flash()->error('Oops! Something went wrong.');
+        }
+        return redirect(route('backend'));
     }
 
     /**

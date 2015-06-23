@@ -60,7 +60,7 @@ delete('/user/{id}/delete', [
     'uses' => 'UsersController@destroy'
 ]);
 
-/* category */
+/* Category */
 post('/category/create', [
     'as' => 'post.create.category',
     'middleware' => 'auth',
@@ -73,7 +73,7 @@ delete('/category/{id}/delete', [
     'uses' => 'CategoriesController@destroy'
 ]);
 
-/* project */
+/* Project */
 post('/project/create', [
     'as' => 'post.create.project',
     'middleware' => 'auth',

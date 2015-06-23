@@ -24,7 +24,9 @@ class CreateProjectRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'position' => 'required',
+            'category_id' => 'required'
         ];
     }
 }
