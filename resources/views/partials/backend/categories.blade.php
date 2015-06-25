@@ -8,6 +8,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="well">
+                            <legend>New Category</legend>
                             {!! Form::open(['route' => 'post.create.category', 'style' => 'margin-bottom: 0;', 'class' => 'form-inline']) !!}
                                 <div class="form-group">
                                     <label for="color">Font color</label>

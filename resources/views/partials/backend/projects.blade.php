@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-4">
         <div class="well">
+            <legend>New Project</legend>
             {!! Form::open(['route' => 'post.create.project', 'style' => 'margin-bottom: 0;']) !!}
                 <div class="form-group">
                     {!! Form::text('title', Input::old('title'), ['class' => 'form-control', 'placeholder' => 'Title', 'required' => 'required']) !!}
@@ -37,7 +38,6 @@
                     <tr>
                         <th>Pos.</th>
                         <th>Title</th>
-                        <th>Category</th>
                         <th>BG/Font</th>
                         <th class="text-right">Actions</th>
                     </tr>
@@ -48,7 +48,6 @@
                             <tr>
                                 <td>{{ $project->position }}</td>
                                 <td>{{ $project->title }}</td>
-                                <td>{{ $project->category->title }}</td>
                                 <td><span style="color: {{ $project->bgcolor }};">&#9679;</span> {{ $project->bgcolor }} / <span style="color: {{ $project->color }};">&#9679;</span> {{ $project->color }}</td>
                                 <td>
                                     <button class="btn btn-default pull-right"><i class="fa fa-edit"></i></button>
