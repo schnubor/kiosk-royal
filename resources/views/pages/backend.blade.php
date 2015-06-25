@@ -34,7 +34,6 @@
         @include('partials.backend.modals.category')
 
         {{------------------ Projects ------------------}}
-        @include('partials.backend.projects')
         @include('partials.backend.modals.project')
 
         {{------------------ Images ------------------}}
