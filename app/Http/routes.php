@@ -85,3 +85,16 @@ delete('/project/{id}/delete', [
     'middleware' => 'auth',
     'uses' => 'ProjectsController@destroy'
 ]);
+
+/* Image */
+post('/image/create', [
+    'as' => 'post.create.image',
+    'middleware' => 'auth',
+    'uses' => 'ImagesController@store'
+]);
+
+delete('/image/{id}/delete', [
+    'as' => 'delete.image',
+    'middleware' => 'auth',
+    'uses' => 'ImagesController@destroy'
+]);

@@ -24,7 +24,8 @@ class CreateImageRequest extends Request
     public function rules()
     {
         return [
-            //
+            'imageFile' => 'required',
+            'project_id' => 'required'
         ];
     }
 }

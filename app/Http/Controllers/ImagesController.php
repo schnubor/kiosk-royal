@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CreateImageRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Image;
 
 class ImagesController extends Controller
 {
@@ -34,9 +35,28 @@ class ImagesController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(CreateImageRequest $request)
     {
-        //
+        // uploaded vinyl cover or URL
+        if($request->hasFile('imageFile')){
+              $path = public_path() . '/images';
+              $file = $request->file('imageFile');
+              $fileName =  time(). '_' .$file->getClientOriginalName();
+              $file->move($path,$fileName);
+              $image = '/images/' . $fileName;
+        }
+         $image = Image::create([
+            'project_id' => $request->input('project_id'),
+            'position' => 1,
+            'filename' => $image
+        ]);
+        if($image){
+            flash()->success('Image uploaded successfully!');
+        }
+        else{
+            flash()->error('Oops! Something went wrong.');
+        }
+        return redirect(route('backend'));
     }
 
     /**
