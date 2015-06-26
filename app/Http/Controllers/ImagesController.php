@@ -100,6 +100,10 @@ class ImagesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $image = Image::find($id);
+        $image->delete();
+
+        flash()->info('Image deleted successfully.');
+        return redirect(route('backend'));
     }
 }

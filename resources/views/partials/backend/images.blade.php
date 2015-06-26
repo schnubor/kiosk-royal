@@ -27,9 +27,16 @@
                     </div>
                 </div>{{-- upload form --}}
                 <div class="row">
-                    @foreach($images as $image)
-                        <img src="{{ $image->filename }}" alt="lol">
-                    @endforeach
+                    <div class="col-md-12">
+                        @foreach($images as $image)
+                            <div class="col-md-4 thumbnail">
+                                <img src="{{ $image->filename }}" alt="Image of {{ $image->project->title }}">
+                                <div class="caption">
+                                    <h4>{{ $image->project->title }}</h4>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
