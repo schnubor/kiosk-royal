@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Http\Requests\CreateCategoryRequest;
+use App\Http\Requests\EditCategoryRequest;
 use App\Http\Requests;
-use App\Http\Requests\CreateUserRequest;
 use App\Http\Controllers\Controller;
-use App\User;
-class UsersController extends Controller
+use App\Category;
+
+class CategoriesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,14 +36,15 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(CreateCategoryRequest $request)
     {
-        $user = User::create([
-            'username' => $request->input('username'),
-            'password' => bcrypt($request->input('password'))
+        $category = Category::create([
+            'title' => $request->input('title'),
+            'position' => $request->input('position'),
+            'color' => $request->input('color')
         ]);
-        if($user){
-            flash()->success('Admin created successfully!');
+        if($category){
+            flash()->success('Category created successfully!');
         }
         else{
             flash()->error('Oops! Something went wrong.');
@@ -56,7 +60,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return $category;
     }
 
     /**
@@ -76,9 +81,21 @@ class UsersController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, EditCategoryRequest $request)
     {
-        //
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->position = $request->position;
+        $category->color = $request->color;
+
+        if($category->save()){
+            flash()->success('Category updated successfully!');
+        }
+        else{
+            flash()->danger('Oops! Something went wrong.');
+        }
+
+        return redirect(route('backend'));
     }
 
     /**
@@ -89,11 +106,10 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        if($id != 1){
-            $user = User::find($id);
-            $user->delete();
-        }
-        flash()->info('User deleted successfully.');
+        $category = Category::find($id);
+        $category->delete();
+
+        flash()->info('Category deleted successfully.');
         return redirect(route('backend'));
     }
 }

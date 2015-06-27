@@ -1,5 +1,14 @@
 (function() {
-  console.log('CHKO Boilerplate');
+  console.log('made by chko.org');
+
+
+  /*
+      Initialize
+   */
+
+  $(function() {
+    return $('[data-toggle="tooltip"]').tooltip();
+  });
 
 }).call(this);
 

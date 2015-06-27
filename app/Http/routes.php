@@ -59,3 +59,65 @@ delete('/user/{id}/delete', [
     'middleware' => 'auth',
     'uses' => 'UsersController@destroy'
 ]);
+
+/* Category */
+post('/category/create', [
+    'as' => 'post.create.category',
+    'middleware' => 'auth',
+    'uses' => 'CategoriesController@store'
+]);
+
+post('category/{id}/edit', [
+    'as' => 'edit.category',
+    'middleware' => 'auth',
+    'uses' => 'CategoriesController@update'
+]);
+
+get('/category/{id}', [
+    'as' => 'get.category',
+    'uses' => 'CategoriesController@show'
+]);
+
+delete('/category/{id}/delete', [
+    'as' => 'delete.category',
+    'middleware' => 'auth',
+    'uses' => 'CategoriesController@destroy'
+]);
+
+/* Project */
+post('/project/create', [
+    'as' => 'post.create.project',
+    'middleware' => 'auth',
+    'uses' => 'ProjectsController@store'
+]);
+
+post('project/{id}/edit', [
+    'as' => 'edit.project',
+    'middleware' => 'auth',
+    'uses' => 'ProjectsController@update'
+]);
+
+get('/project/{id}', [
+    'as' => 'get.project',
+    'uses' => 'ProjectsController@show'
+]);
+
+delete('/project/{id}/delete', [
+    'as' => 'delete.project',
+    'middleware' => 'auth',
+    'uses' => 'ProjectsController@destroy'
+]);
+
+/* Image */
+post('/image/create', [
+    'as' => 'post.create.image',
+    'middleware' => 'auth',
+    'uses' => 'ImagesController@store'
+]);
+
+delete('/image/{id}/delete', [
+    'as' => 'delete.image',
+    'middleware' => 'auth',
+    'uses' => 'ImagesController@destroy'
+]);
+

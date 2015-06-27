@@ -11533,68 +11533,54 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
-(function() {
-  Vue.http.headers.common['X-CSRF-TOKEN'] = $('#CSRFtoken').attr('value');
 
-  new Vue({
-    el: '#admins',
-    data: {
-      newAdmin: {
-        username: '',
-        password: '',
-        password_again: ''
-      },
-      submitted: false,
-      passwordError: false
-    },
-    computed: {
-      errors: function() {
-        var key;
-        for (key in this.newAdmin) {
-          if (!this.newAdmin[key]) {
-            return true;
-          }
-        }
-        return false;
-      }
-    },
-    ready: function() {
-      return this.fetchUsers();
-    },
-    methods: {
-      fetchUsers: function() {
-        return this.$http.get('/user', function(admins) {
-          this.$set('admins', admins);
-          return console.log(this.admins);
-        });
-      },
-      onSubmitForm: function(e) {
-        var admin;
-        e.preventDefault();
-        admin = this.newAdmin;
-        if (admin.password === admin.password_again) {
-          this.admins.push(admin);
-          console.log(this.admins);
-          this.newAdmin = {
-            name: '',
-            password: '',
-            password_again: ''
-          };
-          this.$http.post('/user/create', admin);
-          this.submitted = true;
-          return this.passwordError = false;
-        } else {
-          return this.passwordError = true;
-        }
-      }
-    }
+/*
+    Modals
+ */
+
+(function() {
+  $('#categoryModal').on('show.bs.modal', function(event) {
+    var button, id;
+    button = $(event.relatedTarget);
+    id = button.data('id');
+    return $.getJSON('/category/' + id, function(data) {
+      console.log(data.title);
+      $('#categoryModal').find('.js-form').attr('action', '/category/' + data.id + '/edit');
+      $('#categoryModal').find('.js-title').val(data.title);
+      $('#categoryModal').find('.js-position').val(data.position);
+      return $('#categoryModal').find('.js-color').val(data.color);
+    });
+  });
+
+  $('#projectModal').on('show.bs.modal', function(event) {
+    var button, id;
+    button = $(event.relatedTarget);
+    id = button.data('id');
+    return $.getJSON('/project/' + id, function(data) {
+      console.log(data);
+      $('#projectModal').find('.js-form').attr('action', '/project/' + data.id + '/edit');
+      $('#projectModal').find('.js-title').val(data.title);
+      $('#projectModal').find('.js-description').val(data.description);
+      $('#projectModal').find('.js-position').val(data.position);
+      $('#projectModal').find('.js-color').val(data.color);
+      return $('#projectModal').find('.js-bgcolor').val(data.bgcolor);
+    });
   });
 
 }).call(this);
 
 //# sourceMappingURL=backend.js.map
 (function() {
-  console.log('CHKO Boilerplate');
+  console.log('made by chko.org');
+
+
+  /*
+      Initialize
+   */
+
+  $(function() {
+    return $('[data-toggle="tooltip"]').tooltip();
+  });
 
 }).call(this);
 

@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use App\Http\Requests\CreateImageRequest;
 use App\Http\Requests;
-use App\Http\Requests\CreateUserRequest;
 use App\Http\Controllers\Controller;
-use App\User;
-class UsersController extends Controller
+use App\Image;
+use Storage;
+
+class ImagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -33,14 +36,23 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function store(CreateUserRequest $request)
+    public function store(CreateImageRequest $request)
     {
-        $user = User::create([
-            'username' => $request->input('username'),
-            'password' => bcrypt($request->input('password'))
+        // uploaded vinyl cover or URL
+        if($request->hasFile('imageFile')){
+              $path = public_path() . '/images';
+              $file = $request->file('imageFile');
+              $fileName =  time(). '_' .$file->getClientOriginalName();
+              $file->move($path,$fileName);
+              $image = $fileName;
+        }
+         $image = Image::create([
+            'project_id' => $request->input('project_id'),
+            'position' => 1,
+            'filename' => $image
         ]);
-        if($user){
-            flash()->success('Admin created successfully!');
+        if($image){
+            flash()->success('Image uploaded successfully!');
         }
         else{
             flash()->error('Oops! Something went wrong.');
@@ -89,11 +101,11 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        if($id != 1){
-            $user = User::find($id);
-            $user->delete();
-        }
-        flash()->info('User deleted successfully.');
+        $image = Image::find($id);
+        unlink(public_path().'/images/'.$image->filename);
+        $image->delete();
+
+        flash()->info('Image deleted successfully.');
         return redirect(route('backend'));
     }
 }
