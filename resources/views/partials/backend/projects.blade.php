@@ -7,7 +7,7 @@
                     {!! Form::text('title', Input::old('title'), ['class' => 'form-control', 'placeholder' => 'Title', 'required' => 'required']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::textarea('description', Input::old('description'), ['class' => 'form-control', 'placeholder' => 'Description', 'required' => 'required', 'style' => 'resize: vertical;', 'rows' => '5']) !!}
+                    {!! Form::textarea('description', Input::old('description'), ['class' => 'form-control', 'placeholder' => 'Description', 'style' => 'resize: vertical;', 'rows' => '5']) !!}
                 </div>
                 {!! Form::hidden('category_id', $category->id) !!}
                 <div class="form-group">

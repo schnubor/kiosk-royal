@@ -96,8 +96,6 @@ class CategoriesController extends Controller
         }
 
         return redirect(route('backend'));
-
-
     }
 
     /**

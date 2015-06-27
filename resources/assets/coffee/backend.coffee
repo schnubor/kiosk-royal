@@ -20,3 +20,9 @@ $('#projectModal').on 'show.bs.modal', (event) ->
     id = button.data('id') # Extract info from data-* attributes
     $.getJSON '/project/'+id, (data) ->
         console.log data
+        $('#projectModal').find('.js-form').attr('action', '/project/'+data.id+'/edit')
+        $('#projectModal').find('.js-title').val(data.title)
+        $('#projectModal').find('.js-description').val(data.description)
+        $('#projectModal').find('.js-position').val(data.position)
+        $('#projectModal').find('.js-color').val(data.color)
+        $('#projectModal').find('.js-bgcolor').val(data.bgcolor)

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateProjectRequest;
+use App\Http\Requests\EditProjectRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Project;
@@ -83,9 +84,23 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, EditProjectRequest $request)
     {
-        //
+        $project = Project::find($id);
+        $project->title = $request->title;
+        $project->description = $request->description;
+        $project->position = $request->position;
+        $project->color = $request->color;
+        $project->bgcolor = $request->bgcolor;
+
+        if($project->save()){
+            flash()->success('Project updated successfully!');
+        }
+        else{
+            flash()->danger('Oops! Something went wrong.');
+        }
+
+        return redirect(route('backend'));
     }
 
     /**

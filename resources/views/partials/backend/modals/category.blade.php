@@ -7,23 +7,23 @@
             </div>
             <div class="modal-body">
                 {!! Form::open(['route' => 'edit.category', 'style' => 'margin-bottom: 0;', 'class' => 'js-form']) !!}
-                    <div class="form-group">
-                        {!! Form::label('title') !!}
-                        {!! Form::text('title', Input::old('title'), ['class' => 'form-control js-title', 'required' => 'required']) !!}
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('position') !!}
-                        <select name="position" class="form-control js-position">
-                            <option disabled selected>Choose position</option>
-                            @for($i = 1; $i <= $categories->count()+1; $i++)
-                                <option value="{{ $i }}">Position {{ $i }}</option>
-                            @endfor
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        {!! Form::label('Font color') !!}
-                        <input type="color" name="color" class="form-control js-color">
-                    </div>
+                <div class="form-group">
+                    {!! Form::label('title') !!}
+                    {!! Form::text('title', Input::old('title'), ['class' => 'form-control js-title', 'required' => 'required']) !!}
+                </div>
+                <div class="form-group">
+                    {!! Form::label('position') !!}
+                    <select name="position" class="form-control js-position">
+                        <option disabled selected>Choose position</option>
+                        @for($i = 1; $i <= $categories->count()+1; $i++)
+                            <option value="{{ $i }}">Position {{ $i }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <div class="form-group">
+                    {!! Form::label('Font color') !!}
+                    <input type="color" name="color" class="form-control js-color">
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -22,7 +22,13 @@
     button = $(event.relatedTarget);
     id = button.data('id');
     return $.getJSON('/project/' + id, function(data) {
-      return console.log(data);
+      console.log(data);
+      $('#projectModal').find('.js-form').attr('action', '/project/' + data.id + '/edit');
+      $('#projectModal').find('.js-title').val(data.title);
+      $('#projectModal').find('.js-description').val(data.description);
+      $('#projectModal').find('.js-position').val(data.position);
+      $('#projectModal').find('.js-color').val(data.color);
+      return $('#projectModal').find('.js-bgcolor').val(data.bgcolor);
     });
   });
 

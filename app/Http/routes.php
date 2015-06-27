@@ -91,6 +91,12 @@ post('/project/create', [
     'uses' => 'ProjectsController@store'
 ]);
 
+post('project/{id}/edit', [
+    'as' => 'edit.project',
+    'middleware' => 'auth',
+    'uses' => 'ProjectsController@update'
+]);
+
 get('/project/{id}', [
     'as' => 'get.project',
     'uses' => 'ProjectsController@show'

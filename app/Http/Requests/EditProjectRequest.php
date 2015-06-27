@@ -13,7 +13,7 @@ class EditProjectRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class EditProjectRequest extends Request
     public function rules()
     {
         return [
-            //
+            'title' => 'required',
+            'position' => 'required'
         ];
     }
 }
