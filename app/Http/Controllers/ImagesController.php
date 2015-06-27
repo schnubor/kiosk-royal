@@ -7,6 +7,7 @@ use App\Http\Requests\CreateImageRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Image;
+use Storage;
 
 class ImagesController extends Controller
 {
@@ -43,7 +44,7 @@ class ImagesController extends Controller
               $file = $request->file('imageFile');
               $fileName =  time(). '_' .$file->getClientOriginalName();
               $file->move($path,$fileName);
-              $image = '/images/' . $fileName;
+              $image = $fileName;
         }
          $image = Image::create([
             'project_id' => $request->input('project_id'),
@@ -101,6 +102,7 @@ class ImagesController extends Controller
     public function destroy($id)
     {
         $image = Image::find($id);
+        unlink(public_path().'/images/'.$image->filename);
         $image->delete();
 
         flash()->info('Image deleted successfully.');

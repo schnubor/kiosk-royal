@@ -29,11 +29,16 @@
                 <div class="row">
                     <div class="col-md-12">
                         @foreach($images as $image)
-                            <div class="col-md-4 thumbnail">
-                                <img src="{{ $image->filename }}" alt="Image of {{ $image->project->title }}">
+                            <div class="col-md-3 thumbnail">
+                                <img src="{{ '/images/'.$image->filename }}" alt="Image of {{ $image->project->title }}">
                                 <div class="caption">
+                                    <small style="color: #ccc;">{{ $image->filename }}</small><br>
                                     <h4>{{ $image->project->title }}</h4>
                                 </div>
+                                {!! Form::open(['route' => ['delete.image', $image->id], 'style' => 'margin-bottom: 0; display: inline-block;', 'onsubmit'=>'return confirm("Really want to delete that image?");', 'class' => 'pull-right']) !!}
+                                    <input name="_method" type="hidden" value="DELETE">
+                                    {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger']) !!}
+                                {!! Form::close() !!}
                             </div>
                         @endforeach
                     </div>
