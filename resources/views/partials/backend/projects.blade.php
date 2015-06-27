@@ -51,10 +51,10 @@
                                 <td><span style="color: {{ $project->bgcolor }};">&#9679;</span> {{ $project->bgcolor }} / <span style="color: {{ $project->color }};">&#9679;</span> {{ $project->color }}</td>
                                 <td>
                                     <div class="pull-right">
-                                        <button class="btn btn-default btn-sm"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#projectModal"><i class="fa fa-edit"></i></button>
                                         {!! Form::open(['route' => ['delete.project', $project->id], 'style' => 'margin-bottom: 0; display: inline-block;', 'onsubmit'=>'return confirm("Really want to delete '.$project->title.'? You will also delete all images of the project.");']) !!}
                                             <input name="_method" type="hidden" value="DELETE">
-                                            {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger']) !!}
+                                            {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger', 'data-toggle' => 'tooltip',  'data-placement' => 'bottom', 'title' => 'Delete']) !!}
                                         {!! Form::close() !!}
                                     </div>
                                 </td>

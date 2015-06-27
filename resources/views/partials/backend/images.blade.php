@@ -37,7 +37,7 @@
                                 </div>
                                 {!! Form::open(['route' => ['delete.image', $image->id], 'style' => 'margin-bottom: 0; display: inline-block;', 'onsubmit'=>'return confirm("Really want to delete that image?");', 'class' => 'pull-right']) !!}
                                     <input name="_method" type="hidden" value="DELETE">
-                                    {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger']) !!}
+                                    {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger', 'data-toggle' => 'tooltip',  'data-placement' => 'bottom', 'title' => 'Delete']) !!}
                                 {!! Form::close() !!}
                             </div>
                         @endforeach

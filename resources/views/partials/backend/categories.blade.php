@@ -40,7 +40,7 @@
                                         <button class="btn btn-sm btn-default" data-toggle="modal" data-target="#categoryModal"><i class="fa fa-edit"></i></button>
                                         {!! Form::open(['route' => ['delete.category', $category->id], 'style' => 'margin-bottom: 0; display: inline-block;', 'onsubmit'=>'return confirm("Really want to delete '.$category->title.'? You will also delete all projects and images in the category.");']) !!}
                                             <input name="_method" type="hidden" value="DELETE">
-                                            {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger']) !!}
+                                            {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger', 'data-toggle' => 'tooltip',  'data-placement' => 'bottom', 'title' => 'Delete']) !!}
                                         {!! Form::close() !!}
                                     </div>
                                 </div>

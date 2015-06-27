@@ -1,1 +1,1 @@
-{"version":3,"sources":["app.coffee"],"names":[],"mappings":"AAAA;EAAA,OAAO,CAAC,GAAR,CAAY,kBAAZ;AAAA","file":"app.js","sourceRoot":"/source/","sourcesContent":["console.log 'CHKO Boilerplate'"]}
+{"version":3,"sources":["app.coffee"],"names":[],"mappings":"AAAA;EAAA,OAAO,CAAC,GAAR,CAAY,kBAAZ;;;AAEA;;;;EAIA,CAAA,CAAE,SAAA;WACA,CAAA,CAAE,yBAAF,CAA4B,CAAC,OAA7B,CAAA;EADA,CAAF;AANA","file":"app.js","sourceRoot":"/source/","sourcesContent":["console.log 'CHKO Boilerplate'\n\n###\n    Initialize\n###\n\n$ ->\n  $('[data-toggle=\"tooltip\"]').tooltip()\n\n"]}

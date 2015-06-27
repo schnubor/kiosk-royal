@@ -7,7 +7,7 @@
             <div class="panel-body">
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="well">
+                        <div class="well" style="margin-bottom: 0;">
                             {!! Form::open(['route' => 'post.create.user', 'style' => 'margin-bottom: 0;']) !!}
                                 <div class="form-group">
                                     {!! Form::text('username', Input::old('username'), ['class' => 'form-control', 'placeholder' => 'Username', 'required' => 'required']) !!}
@@ -39,7 +39,7 @@
                                         <td class="text-right">
                                             {!! Form::open(['route' => ['delete.user', $user->id], 'style' => 'margin-bottom: 0;', 'onsubmit'=>'return confirm("Really want to delete '.$user->username.'?");']) !!}
                                                 <input name="_method" type="hidden" value="DELETE">
-                                                {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger']) !!}
+                                                {!! Form::button('<i class="fa fa-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-sm btn-danger', 'data-toggle' => 'tooltip',  'data-placement' => 'bottom', 'title' => 'Delete']) !!}
                                             {!! Form::close() !!}
                                         </td>
                                     </tr>
