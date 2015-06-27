@@ -35,6 +35,7 @@ elixir(function(mix) {
         'vendor/jquery.js',
         'vendor/underscore-min.js',
         'vendor/bootstrap.js',
+        'backend.js',
         'app.js'
     ], null, 'public/js');
 

@@ -62,7 +62,8 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        //
+        $project = Project::find($id);
+        return $project;
     }
 
     /**

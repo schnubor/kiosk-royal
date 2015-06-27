@@ -1,5 +1,5 @@
 (function() {
-  console.log('CHKO Boilerplate');
+  console.log('made by chko.org');
 
 
   /*

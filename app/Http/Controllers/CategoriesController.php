@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateCategoryRequest;
+use App\Http\Requests\EditCategoryRequest;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Category;
@@ -59,7 +60,8 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $category = Category::find($id);
+        return $category;
     }
 
     /**
@@ -79,9 +81,23 @@ class CategoriesController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update($id, EditCategoryRequest $request)
     {
-        //
+        $category = Category::find($id);
+        $category->title = $request->title;
+        $category->position = $request->position;
+        $category->color = $request->color;
+
+        if($category->save()){
+            flash()->success('Category updated successfully!');
+        }
+        else{
+            flash()->danger('Oops! Something went wrong.');
+        }
+
+        return redirect(route('backend'));
+
+
     }
 
     /**

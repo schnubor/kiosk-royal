@@ -67,6 +67,17 @@ post('/category/create', [
     'uses' => 'CategoriesController@store'
 ]);
 
+post('category/{id}/edit', [
+    'as' => 'edit.category',
+    'middleware' => 'auth',
+    'uses' => 'CategoriesController@update'
+]);
+
+get('/category/{id}', [
+    'as' => 'get.category',
+    'uses' => 'CategoriesController@show'
+]);
+
 delete('/category/{id}/delete', [
     'as' => 'delete.category',
     'middleware' => 'auth',
@@ -78,6 +89,11 @@ post('/project/create', [
     'as' => 'post.create.project',
     'middleware' => 'auth',
     'uses' => 'ProjectsController@store'
+]);
+
+get('/project/{id}', [
+    'as' => 'get.project',
+    'uses' => 'ProjectsController@show'
 ]);
 
 delete('/project/{id}/delete', [
@@ -98,3 +114,4 @@ delete('/image/{id}/delete', [
     'middleware' => 'auth',
     'uses' => 'ImagesController@destroy'
 ]);
+
