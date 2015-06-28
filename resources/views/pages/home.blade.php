@@ -24,7 +24,7 @@
     </nav>
 
     {{-- Projects --}}
-    @if(!empty($categories))
+    @if(!empty($categories) && !empty($category->projects))
         @foreach($categories as $category)
             <section class="category" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
                 <h2>{{ $category->title }}</h2>
