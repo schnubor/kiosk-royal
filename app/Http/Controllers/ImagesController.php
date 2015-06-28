@@ -40,7 +40,7 @@ class ImagesController extends Controller
     {
         // uploaded vinyl cover or URL
         if($request->hasFile('imageFile')){
-              $path = public_path() . '/images';
+              $path = public_path() . '/uploads';
               $file = $request->file('imageFile');
               $fileName =  time(). '_' .$file->getClientOriginalName();
               $file->move($path,$fileName);
@@ -102,7 +102,7 @@ class ImagesController extends Controller
     public function destroy($id)
     {
         $image = Image::find($id);
-        unlink(public_path().'/images/'.$image->filename);
+        unlink(public_path().'/uploads/'.$image->filename);
         $image->delete();
 
         flash()->info('Image deleted successfully.');

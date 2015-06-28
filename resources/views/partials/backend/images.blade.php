@@ -30,7 +30,7 @@
                     <div class="col-md-12">
                         @foreach($images as $image)
                             <div class="col-md-3 thumbnail">
-                                <img src="{{ '/images/'.$image->filename }}" alt="Image of {{ $image->project->title }}">
+                                <img src="{{ '/uploads/'.$image->filename }}" alt="Image of {{ $image->project->title }}">
                                 <div class="caption">
                                     <small style="color: #ccc;">{{ $image->filename }}</small><br>
                                     <h4>{{ $image->project->title }}</h4>
