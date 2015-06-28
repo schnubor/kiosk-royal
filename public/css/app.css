@@ -80,25 +80,25 @@ header {
   100% {
     bottom: 20px; } }
 
-footer {
+#footer {
   height: 240px;
   width: 100%;
   box-shadow: 0 0 10px #777777; }
-  footer ul {
+  #footer ul {
     list-style-type: none;
     margin: 0;
     padding: 80px 0 0; }
-    footer ul li {
+    #footer ul li {
       cursor: pointer;
       text-transform: uppercase;
       padding: 0 10px;
       display: inline-block; }
-      footer ul li:hover {
+      #footer ul li:hover {
         text-decoration: underline; }
-      footer ul li a {
+      #footer ul li a {
         text-decoration: none;
         color: black; }
-        footer ul li a:hover {
+        #footer ul li a:hover {
           color: black; }
 
 #popup {
