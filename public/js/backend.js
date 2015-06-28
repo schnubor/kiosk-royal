@@ -22,7 +22,6 @@
     button = $(event.relatedTarget);
     id = button.data('id');
     return $.getJSON('/project/' + id, function(data) {
-      console.log(data);
       $('#projectModal').find('.js-form').attr('action', '/project/' + data.id + '/edit');
       $('#projectModal').find('.js-title').val(data.title);
       $('#projectModal').find('.js-description').val(data.description);
