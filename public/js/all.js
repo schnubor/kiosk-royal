@@ -11533,6 +11533,18 @@ if (typeof jQuery === 'undefined') {
 
 }(jQuery);
 
+(function() {
+  $('.js-popup').click(function() {
+    return $('#popup').fadeIn(100);
+  });
+
+  $('#popup .js-close').click(function() {
+    return $('#popup').fadeOut(100);
+  });
+
+}).call(this);
+
+//# sourceMappingURL=frontpage.js.map
 
 /*
     Modals
@@ -11557,7 +11569,6 @@ if (typeof jQuery === 'undefined') {
     button = $(event.relatedTarget);
     id = button.data('id');
     return $.getJSON('/project/' + id, function(data) {
-      console.log(data);
       $('#projectModal').find('.js-form').attr('action', '/project/' + data.id + '/edit');
       $('#projectModal').find('.js-title').val(data.title);
       $('#projectModal').find('.js-description').val(data.description);
@@ -11571,7 +11582,7 @@ if (typeof jQuery === 'undefined') {
 
 //# sourceMappingURL=backend.js.map
 (function() {
-  console.log('made by chko.org');
+  console.log('Made by Christian Korndörfer - visit chko.org');
 
 
   /*

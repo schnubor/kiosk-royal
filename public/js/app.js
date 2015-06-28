@@ -1,5 +1,5 @@
 (function() {
-  console.log('made by chko.org');
+  console.log('Made by Christian Korndörfer - visit chko.org');
 
 
   /*

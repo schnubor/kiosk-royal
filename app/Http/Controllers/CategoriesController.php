@@ -108,7 +108,6 @@ class CategoriesController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
-
         flash()->info('Category deleted successfully.');
         return redirect(route('backend'));
     }

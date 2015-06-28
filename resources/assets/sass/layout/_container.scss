@@ -1,0 +1,38 @@
+.container1280{
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.category{
+    text-align: center;
+    padding-top: 70px;
+
+    h2{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 52px;
+        font-weight: 400;
+    }
+}
+
+.project{
+    h3{
+        text-transform: uppercase;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        font-weight: 200;
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+
+    h4{
+        font-family: Georgia, serif;
+        font-style: italic;
+        padding-bottom: 50px;
+        font-size: 14px;
+    }
+
+    .project-image{
+        padding-bottom: 50px;
+    }
+}

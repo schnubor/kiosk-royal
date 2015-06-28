@@ -1,4 +1,17 @@
 // Base
 // ------------------------
 
+@import 'base/general';
 @import 'base/variables';
+
+// Layout
+// ------------------------
+
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/footer';
+
+// Modules
+// ------------------------
+@import 'modules/navigation';
+@import 'modules/popup';
