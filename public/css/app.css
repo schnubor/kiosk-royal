@@ -1,6 +1,37 @@
 html, body {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  font-family: 'Raleway', sans-serif; }
+
+.container1280 {
+  width: 1280px;
+  margin: 0 auto; }
+
+.category {
+  text-align: center;
+  padding-top: 70px; }
+  .category h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 52px;
+    font-weight: 400; }
+
+.project h3 {
+  text-transform: uppercase;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  font-weight: 200;
+  font-size: 30px;
+  letter-spacing: 1px; }
+
+.project h4 {
+  font-family: Georgia, serif;
+  font-style: italic;
+  padding-bottom: 50px;
+  font-size: 14px; }
+
+.project .project-image {
+  padding-bottom: 50px; }
 
 header {
   width: 100%;
@@ -48,5 +79,69 @@ header {
     bottom: 10px; }
   100% {
     bottom: 20px; } }
+
+footer {
+  height: 240px;
+  width: 100%;
+  box-shadow: 0 0 10px #777777; }
+  footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 80px 0 0; }
+    footer ul li {
+      cursor: pointer;
+      text-transform: uppercase;
+      padding: 0 10px;
+      display: inline-block; }
+      footer ul li:hover {
+        text-decoration: underline; }
+      footer ul li a {
+        text-decoration: none;
+        color: black; }
+        footer ul li a:hover {
+          color: black; }
+
+#popup {
+  display: none;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+  #popup .popup-content {
+    background-color: white;
+    position: relative;
+    top: calc(50% - 300px);
+    margin: 0 auto;
+    width: 550px;
+    height: 600px;
+    padding: 50px 40px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
+    #popup .popup-content h5 {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 22px;
+      margin-top: 50px; }
+    #popup .popup-content p {
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #777777;
+      line-height: 24px; }
+      #popup .popup-content p a {
+        color: #BEA731; }
+    #popup .popup-content .logo {
+      width: 120px; }
+    #popup .popup-content .close-icon {
+      color: #CCC;
+      transition: 0.2s all;
+      position: absolute;
+      top: 0;
+      right: 30px;
+      font-size: 54px;
+      line-height: 64px;
+      cursor: pointer; }
+      #popup .popup-content .close-icon:hover {
+        color: #777777; }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,31 @@
+footer{
+    height: 240px;
+    width: 100%;
+    box-shadow: 0 0 10px $grey;
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 80px 0 0;
+
+        li{
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 0 10px;
+            display: inline-block;
+
+            &:hover{
+                text-decoration: underline;
+            }
+
+            a{
+                text-decoration: none;
+                color: black;
+
+                &:hover{
+                    color: black;
+                }
+            }
+        }
+    }
+}
