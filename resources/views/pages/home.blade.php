@@ -24,7 +24,7 @@
     </nav>
 
     {{-- Projects --}}
-    @if($categories->count())
+    @if(!empty($categories))
         @foreach($categories as $category)
             <section class="category" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
                 <h2>{{ $category->title }}</h2>
@@ -42,7 +42,7 @@
     @endif
     
     {{-- Footer --}}
-    <footer class="text-center">
+    <footer id="footer" class="text-center">
         <ul>
             <li class="js-popup">Kontakt</li>
             <li class="js-popup">Impressum</li>
