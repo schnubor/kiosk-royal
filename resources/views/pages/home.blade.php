@@ -24,21 +24,23 @@
     </nav>
 
     {{-- Projects --}}
-    @foreach($categories as $category)
-        <section class="category" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
-            <h2>{{ $category->title }}</h2>
-            @foreach($category->projects as $project)
-                <section class="project" style="background-color: {{ $project->bgcolor }}; color: {{ $project->color }};">
-                    <h3>{{ $project->title }}</h3>
-                    <h4>{{ $project->description }}</h4>
-                    @foreach($project->images as $image)
-                        <img src="/images/{{ $image->filename }}" alt="{{ $image->project->title }}" class="project-image">
-                    @endforeach
-                </section>
-            @endforeach
-        </section>
-    @endforeach
-
+    @if($categories->count())
+        @foreach($categories as $category)
+            <section class="category" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
+                <h2>{{ $category->title }}</h2>
+                @foreach($category->projects as $project)
+                    <section class="project" style="background-color: {{ $project->bgcolor }}; color: {{ $project->color }};">
+                        <h3>{{ $project->title }}</h3>
+                        <h4>{{ $project->description }}</h4>
+                        @foreach($project->images as $image)
+                            <img src="/images/{{ $image->filename }}" alt="{{ $image->project->title }}" class="project-image">
+                        @endforeach
+                    </section>
+                @endforeach
+            </section>
+        @endforeach
+    @endif
+    
     {{-- Footer --}}
     <footer class="text-center">
         <ul>
