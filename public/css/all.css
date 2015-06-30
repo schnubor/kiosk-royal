@@ -7041,7 +7041,8 @@ html, body {
   font-size: 14px; }
 
 .project .project-image {
-  padding-bottom: 50px; }
+  padding-bottom: 50px;
+  width: 100%; }
 
 header {
   width: 100%;
