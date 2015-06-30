@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <label for="color">Font color</label>
-                    <input type="color" class="form-control" value="#FFFFFF" name="color">
+                    <input type="color" class="form-control" value="#000000" name="color">
                 </div>
                 <div class="text-right">
                     {!! Form::button('Add project', ['type' => 'submit', 'class' => 'btn btn-primary']) !!}
