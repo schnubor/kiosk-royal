@@ -14,11 +14,11 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',255)->unique();
+            $table->string('title',255);
             $table->string('description');
             $table->string('color');
             $table->string('bgcolor');
-            $table->integer('position')->unsigned()->unique();
+            $table->integer('position')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
                   ->references('id')
