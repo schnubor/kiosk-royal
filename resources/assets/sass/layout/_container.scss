@@ -5,23 +5,27 @@
 
 .category{
     text-align: center;
-    padding-top: 70px;
+    padding-top: 130px;
 
     h2{
         text-transform: uppercase;
         letter-spacing: 2px;
-        font-size: 52px;
-        font-weight: 400;
+        font-size: 60px;
+        font-weight: 500;
+        margin: 0;
     }
 }
 
 .project{
+    padding-bottom: 130px;
+    
     h3{
         text-transform: uppercase;
-        margin-top: 40px;
+        margin-top: 0;
+        padding-top: 70px;
         margin-bottom: 15px;
         font-weight: 200;
-        font-size: 30px;
+        font-size: 36px;
         letter-spacing: 1px;
     }
 
@@ -29,11 +33,10 @@
         font-family: Georgia, serif;
         font-style: italic;
         padding-bottom: 50px;
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .project-image{
-        padding-bottom: 50px;
         width: 100%;
     }
 }
