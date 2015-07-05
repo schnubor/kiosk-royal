@@ -14,8 +14,6 @@ $('.js-arrow').click ->
         scrollTop: winHeight
     , 1500, 'easeInOutQuad'
 
-
-
 # Arrow
 $(window).scroll ->
     if($(window).scrollTop() > winHeight-1)
