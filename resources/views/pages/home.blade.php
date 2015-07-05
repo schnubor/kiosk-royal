@@ -13,23 +13,21 @@
                 <h1>Grafik und Illustration aus Berlin</h1>
             </div>
         </div>
-        <div class="arrow">
+        <div class="arrow js-arrow">
             <img src="/images/arrow.svg" alt="scroll down">
         </div>
     </header>
 
     {{-- Navigation --}}
-    <nav>
-        
-    </nav>
+    @include('partials.navigation')
 
     {{-- Projects --}}
     @if(!empty($categories))
         @foreach($categories as $category)
             @if(!empty($category->projects->first()->bgcolor))
-                <section class="category" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
+                <section class="category" id="{{$category->title}}" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
             @else
-                <section class="category" style="color: {{ $category->color }}; background-color: white;">
+                <section class="category" id="{{$category->title}}" style="color: {{ $category->color }}; background-color: white;">
             @endif
                 <h2>{{ $category->title }}</h2>
                 @if(!empty($category->projects))

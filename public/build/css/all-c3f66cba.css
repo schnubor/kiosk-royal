@@ -7074,6 +7074,7 @@ header {
     -webkit-animation-duration: 2s;
             animation-duration: 2s; }
     header .arrow img {
+      cursor: pointer;
       width: 25px; }
 
 @-webkit-keyframes upAndDown {
@@ -7104,7 +7105,8 @@ header {
       cursor: pointer;
       text-transform: uppercase;
       padding: 0 10px;
-      display: inline-block; }
+      display: inline-block;
+      letter-spacing: 1px; }
       #footer ul li:hover {
         text-decoration: underline; }
       #footer ul li a {
@@ -7113,6 +7115,45 @@ header {
         #footer ul li a:hover {
           color: black; }
 
+nav {
+  display: none;
+  width: 100%;
+  height: 100px;
+  padding: 20px 0;
+  background-color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  z-index: 1; }
+  nav .logo {
+    width: 60px;
+    float: left; }
+    nav .logo img {
+      width: 100%; }
+  nav .menu {
+    list-style-type: none;
+    margin-left: 120px;
+    padding: 0; }
+    nav .menu li {
+      cursor: pointer;
+      display: inline-block;
+      height: 60px;
+      line-height: 60px;
+      font-size: 18px;
+      text-transform: uppercase;
+      padding-right: 30px;
+      letter-spacing: 1px; }
+      nav .menu li:last-child {
+        padding-right: 0; }
+      nav .menu li:hover {
+        color: #BEA731;
+        text-decoration: underline; }
+      nav .menu li a {
+        color: black; }
+        nav .menu li a:hover {
+          color: #BEA731;
+          text-decoration: underline; }
+
 #popup {
   display: none;
   position: fixed;
@@ -7120,7 +7161,8 @@ header {
   width: 100%;
   height: 100%;
   top: 0;
-  left: 0; }
+  left: 0;
+  z-index: 2; }
   #popup .popup-content {
     background-color: white;
     position: relative;

@@ -24,6 +24,7 @@ elixir(function(mix) {
     mix.copy('bower_components/bootstrap/dist/js/bootstrap.js', 'public/js/vendor/bootstrap.js');
     mix.copy('bower_components/fontawesome/fonts', 'public/css/fonts');
     mix.copy('bower_components/fontawesome/css/font-awesome.min.css', 'public/css/vendor/font-awesome.min.css');
+    mix.copy('bower_components/jquery-easing-original/jquery.easing.min.js', 'public/js/vendor/jquery.easing.min.js');
 
     mix.styles([                        // concat styles
         'vendor/normalize.css',
@@ -35,6 +36,7 @@ elixir(function(mix) {
         'vendor/jquery.js',
         'vendor/underscore-min.js',
         'vendor/bootstrap.js',
+        'vendor/jquery.easing.min.js',
         'frontpage.js',
         'backend.js',
         'app.js'
