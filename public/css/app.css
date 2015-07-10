@@ -12,6 +12,9 @@ html, body {
   @media only screen and (max-width: 960px) {
     .container1280 {
       width: 640px; } }
+  @media only screen and (max-width: 640px) {
+    .container1280 {
+      width: 100%; } }
 
 .category {
   text-align: center;
@@ -121,6 +124,9 @@ nav {
   position: fixed;
   top: 0;
   z-index: 1; }
+  @media only screen and (max-width: 960px) {
+    nav {
+      display: none !important; } }
   nav .logo {
     width: 40px;
     float: left; }
@@ -141,6 +147,10 @@ nav {
       letter-spacing: 1px;
       transition: .2s all;
       border-bottom: none; }
+      @media only screen and (max-width: 1280px) {
+        nav .menu li {
+          margin-right: 28px;
+          font-size: 12px; } }
       nav .menu li:last-child {
         padding-right: 0; }
       nav .menu li:hover {
