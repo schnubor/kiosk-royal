@@ -7040,7 +7040,8 @@ html, body {
     margin: 0; }
     @media only screen and (max-width: 640px) {
       .category h2 {
-        font-size: 24px; } }
+        font-size: 24px;
+        padding: 0 20px; } }
 
 .project {
   padding-bottom: 130px; }
@@ -7054,8 +7055,9 @@ html, body {
     letter-spacing: 1px; }
     @media only screen and (max-width: 640px) {
       .project h3 {
-        padding-top: 30px;
-        font-size: 18px; } }
+        font-size: 18px;
+        padding: 0 20px;
+        padding-top: 30px; } }
   .project h4 {
     font-family: Georgia, serif;
     font-style: italic;
@@ -7063,6 +7065,7 @@ html, body {
     font-size: 20px; }
     @media only screen and (max-width: 640px) {
       .project h4 {
+        padding: 0 20px;
         padding-bottom: 25px;
         font-size: 14px; } }
   .project .project-image {
@@ -7090,7 +7093,9 @@ header {
       margin-bottom: 0; }
       @media only screen and (max-width: 640px) {
         header .header-content h1 {
-          margin-top: 50px; } }
+          margin-top: 50px;
+          padding: 0 20px;
+          font-size: 24px; } }
   header .arrow {
     position: absolute;
     bottom: 20px;

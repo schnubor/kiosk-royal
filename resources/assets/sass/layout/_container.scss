@@ -38,6 +38,7 @@
         // iPhone
         @media only screen and (max-width:640px){ 
             font-size: 24px;
+            padding: 0 20px;
         }
     }
 }
@@ -56,8 +57,9 @@
 
         // iPhone
         @media only screen and (max-width:640px){ 
-            padding-top: 30px;
             font-size: 18px;
+            padding: 0 20px;
+            padding-top: 30px;
         }
     }
 
@@ -68,7 +70,8 @@
         font-size: 20px;
 
         // iPhone
-        @media only screen and (max-width:640px){ 
+        @media only screen and (max-width:640px){
+            padding: 0 20px;
             padding-bottom: 25px;
             font-size: 14px;
         }
