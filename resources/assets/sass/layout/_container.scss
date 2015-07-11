@@ -23,12 +23,22 @@
     text-align: center;
     padding-top: 130px;
 
+    // iPhone
+    @media only screen and (max-width:640px){ 
+        padding-top: 65px;
+    }
+
     h2{
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 60px;
         font-weight: 500;
         margin: 0;
+
+        // iPhone
+        @media only screen and (max-width:640px){ 
+            font-size: 24px;
+        }
     }
 }
 
@@ -43,6 +53,12 @@
         font-weight: 200;
         font-size: 36px;
         letter-spacing: 1px;
+
+        // iPhone
+        @media only screen and (max-width:640px){ 
+            padding-top: 30px;
+            font-size: 18px;
+        }
     }
 
     h4{
@@ -50,9 +66,20 @@
         font-style: italic;
         padding-bottom: 50px;
         font-size: 20px;
+
+        // iPhone
+        @media only screen and (max-width:640px){ 
+            padding-bottom: 25px;
+            font-size: 14px;
+        }
     }
 
     .project-image{
         width: 100%;
+
+        // iPhone
+        @media only screen and (max-width:640px){ 
+            width: 90%;
+        }
     }
 }

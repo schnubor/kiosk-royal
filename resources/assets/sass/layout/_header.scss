@@ -19,6 +19,11 @@ header{
             font-size: 32px;
             margin-top: 100px;
             margin-bottom: 0;
+
+            // iPhone
+            @media only screen and (max-width:640px){ 
+                margin-top: 50px;
+            }
         }
     }
 
