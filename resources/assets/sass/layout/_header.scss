@@ -8,8 +8,19 @@ header{
         height: 380px;
         top: calc(50% - 190px);
 
+        // iPhone
+        @media only screen and (max-width:640px){ 
+            height: 330px;
+            top: calc(50% - 140px);
+        }
+
         .logo{
             width: 260px;
+
+            // iPhone
+            @media only screen and (max-width:640px){ 
+                width: 170px;
+            }
         }
 
         h1{
@@ -23,6 +34,8 @@ header{
             // iPhone
             @media only screen and (max-width:640px){ 
                 margin-top: 50px;
+                font-size: 24px;
+                padding: 0 20px;
             }
         }
     }

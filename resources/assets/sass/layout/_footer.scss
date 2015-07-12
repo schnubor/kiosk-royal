@@ -3,6 +3,11 @@
     width: 100%;
     box-shadow: 0 0 10px $grey;
 
+    // iPhone
+    @media only screen and (max-width:640px){ 
+        height: 180px;
+    }
+
     ul{
         list-style-type: none;
         margin: 0;
