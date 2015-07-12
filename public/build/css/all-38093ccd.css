@@ -7149,6 +7149,48 @@ header {
         #footer ul li a:hover {
           color: black; }
 
+.mobile-nav-toggle {
+  width: 40px;
+  position: fixed;
+  top: 10px;
+  left: 15px;
+  cursor: pointer;
+  display: none; }
+  @media only screen and (max-width: 640px) {
+    .mobile-nav-toggle {
+      display: block; } }
+  .mobile-nav-toggle .bar {
+    transition: .2s all;
+    display: block;
+    background-color: #777777;
+    width: 100%;
+    height: 5px;
+    margin: 7px 0; }
+    .mobile-nav-toggle .bar.white {
+      background-color: white; }
+
+#mobile-nav .menu {
+  list-style-type: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  padding: 40px 20px; }
+  #mobile-nav .menu li {
+    line-height: 20px;
+    padding: 15px 0;
+    font-size: 20px; }
+    #mobile-nav .menu li.cat {
+      text-transform: uppercase; }
+    #mobile-nav .menu li.devider {
+      border-top: 1px solid white;
+      padding: 0;
+      margin: 20px; }
+  #mobile-nav .menu a {
+    color: white; }
+    #mobile-nav .menu a:active, #mobile-nav .menu a:hover, #mobile-nav .menu a:focus {
+      text-decoration: none; }
+
 nav {
   display: none;
   width: 100%;
@@ -7199,16 +7241,16 @@ nav {
           color: #BEA731;
           text-decoration: none; }
 
-#popup {
+.overlay {
   display: none;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 2; }
-  #popup .popup-content {
+  .overlay .popup-content {
     background-color: white;
     position: relative;
     top: calc(50% - 300px);
@@ -7217,21 +7259,24 @@ nav {
     height: 600px;
     padding: 50px 40px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
-    #popup .popup-content h5 {
+    @media only screen and (max-width: 640px) {
+      .overlay .popup-content {
+        width: 90%; } }
+    .overlay .popup-content h5 {
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 22px;
       margin-top: 50px; }
-    #popup .popup-content p {
+    .overlay .popup-content p {
       font-family: Georgia, serif;
       font-style: italic;
       color: #777777;
       line-height: 24px; }
-      #popup .popup-content p a {
+      .overlay .popup-content p a {
         color: #BEA731; }
-    #popup .popup-content .logo {
+    .overlay .popup-content .logo {
       width: 120px; }
-    #popup .popup-content .close-icon {
+    .overlay .popup-content .close-icon {
       color: #CCC;
       transition: 0.2s all;
       position: absolute;
@@ -7240,7 +7285,7 @@ nav {
       font-size: 54px;
       line-height: 64px;
       cursor: pointer; }
-      #popup .popup-content .close-icon:hover {
+      .overlay .popup-content .close-icon:hover {
         color: #777777; }
 
 /*# sourceMappingURL=app.css.map */
