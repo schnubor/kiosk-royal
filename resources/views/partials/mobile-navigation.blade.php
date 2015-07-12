@@ -4,12 +4,7 @@
     <span class="bar"></span>
 </div>
 
-<div class="overlay" id="mobile-nav">
-    <div class="mobile-nav-toggle js-closeNav">
-        <span class="bar white"></span>
-        <span class="bar white"></span>
-        <span class="bar white"></span>
-    </div>
+<div class="overlay js-closeNav" id="mobile-nav">
     <ul class="menu">
         @foreach($categories as $category)
             <li class="cat js-closeNav"><a href="#{{$category->title}}">{{ $category->title }}</a></li>
