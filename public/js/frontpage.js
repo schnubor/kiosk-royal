@@ -11,6 +11,16 @@
     return $('#popup').fadeOut(100);
   });
 
+  $('.js-toggleNav').click(function() {
+    $('#mobile-nav').fadeIn();
+    return $(this).fadeOut();
+  });
+
+  $('.js-closeNav').click(function() {
+    $('#mobile-nav').fadeOut();
+    return $('.js-toggleNav').fadeIn();
+  });
+
   $('.js-arrow').click(function() {
     return $("html, body").animate({
       scrollTop: winHeight
@@ -19,9 +29,11 @@
 
   $(window).scroll(function() {
     if ($(window).scrollTop() > winHeight - 1) {
-      return $('nav').fadeIn();
+      $('nav').fadeIn();
+      return $('.mobile-nav-toggle').find('.bar').css('background-color', 'white');
     } else {
-      return $('nav').fadeOut();
+      $('nav').fadeOut();
+      return $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777');
     }
   });
 
