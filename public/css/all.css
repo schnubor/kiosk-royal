@@ -7272,7 +7272,7 @@ nav {
     @media only screen and (max-width: 640px) {
       .overlay .popup-content {
         width: 90%;
-        top: calc(50% - 230px);
+        top: calc(50% - 220px);
         height: 430px;
         padding: 30px; } }
     .overlay .popup-content h5 {
