@@ -20,7 +20,6 @@
 
     {{-- Navigation --}}
     @include('partials.navigation')
-    @include('partials.mobile-navigation')
 
     {{-- Projects --}}
     @if(!empty($categories))
