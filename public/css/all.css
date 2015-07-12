@@ -7271,12 +7271,18 @@ nav {
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
     @media only screen and (max-width: 640px) {
       .overlay .popup-content {
-        width: 90%; } }
+        width: 90%;
+        top: calc(50% - 270px);
+        height: 450px;
+        padding: 30px; } }
     .overlay .popup-content h5 {
       text-transform: uppercase;
       letter-spacing: 2px;
       font-size: 22px;
       margin-top: 50px; }
+      @media only screen and (max-width: 640px) {
+        .overlay .popup-content h5 {
+          margin-top: 20px; } }
     .overlay .popup-content p {
       font-family: Georgia, serif;
       font-style: italic;
@@ -7286,6 +7292,9 @@ nav {
         color: #BEA731; }
     .overlay .popup-content .logo {
       width: 120px; }
+      @media only screen and (max-width: 640px) {
+        .overlay .popup-content .logo {
+          width: 80px; } }
     .overlay .popup-content .close-icon {
       color: #CCC;
       transition: 0.2s all;
@@ -7297,6 +7306,10 @@ nav {
       cursor: pointer; }
       .overlay .popup-content .close-icon:hover {
         color: #777777; }
+      @media only screen and (max-width: 640px) {
+        .overlay .popup-content .close-icon {
+          right: 20px;
+          line-height: 60px; } }
 
 /*# sourceMappingURL=app.css.map */
 /*# sourceMappingURL=all.css.map */
