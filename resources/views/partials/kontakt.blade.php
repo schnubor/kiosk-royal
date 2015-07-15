@@ -1,4 +1,4 @@
-<div class="overlay" id="popup">
+<div class="overlay" id="kontakt">
     <div class="popup-content">
         <div class="close-icon js-close">&times;</div>
         <img src="/images/logo.svg" alt="Kiosk Royal" class="logo">

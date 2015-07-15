@@ -32,6 +32,10 @@
             font-size: 22px;
             margin-top: 50px;
 
+            &.no-top-margin{
+                margin-top: 0;
+            }
+
             // iPhone
             @media only screen and (max-width:640px){ 
                 margin-top: 20px;

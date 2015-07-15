@@ -1,12 +1,15 @@
 # General
 winHeight = $(window).height()
 
-# Popup
-$('.js-popup').click ->
-    $('#popup').fadeIn(100)
+# Popups
+$('.js-kontakt').click ->
+    $('#kontakt').fadeIn(100)
 
-$('#popup .js-close').click ->
-    $('#popup').fadeOut(100)
+$('.js-imprint').click ->
+    $('#imprint').fadeIn(100)
+
+$('.overlay .js-close').click ->
+    $('.overlay').fadeOut(100)
 
 # Mobile Nav
 $('.js-toggleNav').click ->

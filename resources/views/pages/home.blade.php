@@ -51,12 +51,13 @@
     {{-- Footer --}}
     <footer id="footer" class="text-center">
         <ul>
-            <li class="js-popup">Kontakt</li>
-            <li class="js-popup">Impressum</li>
+            <li class="js-kontakt">Kontakt</li>
+            <li class="js-imprint">Impressum</li>
             <li><a href="https://www.facebook.com/KIOSKROYAL" target="_blank">Facebook</a></li>
         </ul>
     </footer>
 
-    {{-- Popup --}}
-    @include('partials.popup')
+    {{-- Popups --}}
+    @include('partials.kontakt')
+    @include('partials.imprint')
 @endsection

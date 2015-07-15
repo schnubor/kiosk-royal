@@ -7,7 +7,7 @@
             @foreach($categories as $category)
                 <li><a href="#{{$category->title}}">{{ $category->title }}</a></li>
             @endforeach
-            <li class="js-popup">Kontakt</li>
+            <li class="js-kontakt">Kontakt</li>
         </ul>
     </div>
 </nav>

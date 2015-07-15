@@ -25,6 +25,7 @@ elixir(function(mix) {
     mix.copy('bower_components/fontawesome/fonts', 'public/css/fonts');
     mix.copy('bower_components/fontawesome/css/font-awesome.min.css', 'public/css/vendor/font-awesome.min.css');
     mix.copy('bower_components/jquery-easing-original/jquery.easing.min.js', 'public/js/vendor/jquery.easing.min.js');
+    mix.copy('bower_components/retinajs/dist/retina.min.js', 'public/js/vendor/retina.min.js');
 
     mix.styles([                        // concat styles
         'vendor/normalize.css',

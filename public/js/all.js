@@ -11553,12 +11553,16 @@ f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f
 
   winHeight = $(window).height();
 
-  $('.js-popup').click(function() {
-    return $('#popup').fadeIn(100);
+  $('.js-kontakt').click(function() {
+    return $('#kontakt').fadeIn(100);
   });
 
-  $('#popup .js-close').click(function() {
-    return $('#popup').fadeOut(100);
+  $('.js-imprint').click(function() {
+    return $('#imprint').fadeIn(100);
+  });
+
+  $('.overlay .js-close').click(function() {
+    return $('.overlay').fadeOut(100);
   });
 
   $('.js-toggleNav').click(function() {
