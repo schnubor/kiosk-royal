@@ -36,3 +36,77 @@ $(window).scroll ->
     else
         $('nav').fadeOut()
         $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777')
+
+# Image sizes
+isRetinaDisplay = ->
+    if window.matchMedia
+        mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)")
+        return (mq && mq.matches || (window.devicePixelRatio > 1))
+
+replaceImages = (retina) ->
+    width = $('.container1280').width()
+    console.log width
+    switch width
+        when 1280
+            if not retina
+                console.log 'not retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/1280')
+        when 960
+            if retina
+                console.log 'retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/1920')
+            else
+                console.log 'not retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/960')
+        when 640
+            if retina
+                console.log 'retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/1280')
+            else
+                console.log 'not retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/640')
+        else
+            if retina
+                console.log 'retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/800')
+            else
+                console.log 'not retina!'
+                images = $('.js-resize')
+                $.each images, ->
+                    filename = $(this).data('file')
+                    filename = filename.substring(0, filename.length - 4) # trim file extension
+                    console.log filename
+                    $(this).attr('src', '/resizer/'+filename+'/400')
+
+retina = isRetinaDisplay()
+replaceImages(retina)

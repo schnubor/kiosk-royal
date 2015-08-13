@@ -5,5 +5,5 @@ console.log 'Made by Christian Korndörfer - visit chko.org'
 ###
 
 $ ->
-  $('[data-toggle="tooltip"]').tooltip()
+    $('[data-toggle="tooltip"]').tooltip()
 

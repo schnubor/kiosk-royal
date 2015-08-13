@@ -38,7 +38,7 @@
                                 <h3>{{ $project->title }}</h3>
                                 <h4>{{ $project->description }}</h4>
                                 @foreach($project->images as $image)
-                                    <img src="/uploads/{{ $image->filename }}" alt="{{ $image->project->title }}" class="project-image">
+                                    <img src="/uploads/{{ $image->filename }}" alt="{{ $image->project->title }}" class="project-image js-resize" data-file="{{ $image->filename }}">
                                 @endforeach
                             </div>
                         </section>
