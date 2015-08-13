@@ -138,6 +138,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -195,7 +196,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
         'Form'      => Collective\Html\FormFacade::class,
         'HTML'      => Collective\Html\HtmlFacade::class,
-        'Flash'     => Laracasts\Flash\FlashServiceProvider::class
+        'Flash'     => Laracasts\Flash\FlashServiceProvider::class,
+        'Resizer'     => Intervention\Image\Facades\Image::class
     ],
 
 ];

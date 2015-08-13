@@ -121,3 +121,10 @@ delete('/image/{id}/delete', [
     'uses' => 'ImagesController@destroy'
 ]);
 
+/* Image Resizer */
+// usage inside a laravel route
+get('/resizer/{filename}/{width}', function($filename, $width){
+    $img = Resizer::make('uploads/'.$filename.'.png')->widen($width);
+    return $img->response('png');
+});
+

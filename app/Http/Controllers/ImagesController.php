@@ -108,4 +108,9 @@ class ImagesController extends Controller
         flash()->info('Image deleted successfully.');
         return redirect(route('backend'));
     }
+
+    public function resize($filename, $width){
+        $img = Resizer::make('uploads/'.$filename.'png')->resize($width);
+        return $img->response('png');
+    }
 }
