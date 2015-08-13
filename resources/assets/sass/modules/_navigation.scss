@@ -35,19 +35,20 @@ nav{
             line-height: 40px;
             font-size: 14px;
             text-transform: uppercase;
-            margin-right: 30px;
+            margin-right: 70px;
             letter-spacing: 1px;
             transition: .2s all;
             border-bottom: none;
 
             // Macbook
             @media only screen and (max-width: 1280px){
-                margin-right: 28px;
+                margin-right: 33px;
                 font-size: 12px;
             }
 
             &:last-child{
                 padding-right: 0;
+                margin-right: 0;
             }
 
             &:hover{

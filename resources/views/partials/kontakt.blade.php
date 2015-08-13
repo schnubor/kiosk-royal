@@ -5,10 +5,8 @@
 
         <h5>Kontakt</h5>
         <p>
-            eMail: <a href="mailto:mail@kiosk-royal.com">mail@kiosk-royal.com</a>
+            eMail: <a href="mailto:mail@kiosk-royal.com">mail@kiosk-royal.com</a><br><br>
         </p>
-
-        <h5>Impressum</h5>
         <p>
             Hanna Zeckau <br>
             Gneiststraße 16 <br>

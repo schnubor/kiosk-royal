@@ -220,16 +220,17 @@ nav {
       line-height: 40px;
       font-size: 14px;
       text-transform: uppercase;
-      margin-right: 30px;
+      margin-right: 70px;
       letter-spacing: 1px;
       transition: .2s all;
       border-bottom: none; }
       @media only screen and (max-width: 1280px) {
         nav .menu li {
-          margin-right: 28px;
+          margin-right: 33px;
           font-size: 12px; } }
       nav .menu li:last-child {
-        padding-right: 0; }
+        padding-right: 0;
+        margin-right: 0; }
       nav .menu li:hover {
         color: #BEA731;
         border-bottom: 1px solid #BEA731; }
@@ -257,6 +258,7 @@ nav {
     margin: 0 auto;
     width: 550px;
     height: 600px;
+    overflow: auto;
     padding: 50px 40px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); }
     @media only screen and (max-width: 640px) {
