@@ -52,86 +52,71 @@
   replaceImages = function(retina) {
     var images, width;
     width = $('.container1280').width();
-    console.log(width);
     switch (width) {
       case 1280:
         if (!retina) {
-          console.log('not retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/1280');
           });
         }
         break;
       case 960:
         if (retina) {
-          console.log('retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/1920');
           });
         } else {
-          console.log('not retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/960');
           });
         }
         break;
       case 640:
         if (retina) {
-          console.log('retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/1280');
           });
         } else {
-          console.log('not retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/640');
           });
         }
         break;
       default:
         if (retina) {
-          console.log('retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/800');
           });
         } else {
-          console.log('not retina!');
           images = $('.js-resize');
           return $.each(images, function() {
             var filename;
             filename = $(this).data('file');
             filename = filename.substring(0, filename.length - 4);
-            console.log(filename);
             return $(this).attr('src', '/resizer/' + filename + '/400');
           });
         }
