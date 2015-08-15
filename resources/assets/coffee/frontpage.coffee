@@ -50,9 +50,10 @@ replaceImages = (retina) ->
             if not retina
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/1280')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_1280.'+extension)
         when 960
             if retina
                 images = $('.js-resize')
