@@ -44,7 +44,7 @@
                 </thead>
                 <tbody>
                     @if($category->projects()->count())
-                        @foreach($category->projects as $project)
+                        @foreach($category->projects->sortBy('position') as $project)
                             <tr>
                                 <td>{{ $project->position }}</td>
                                 <td>{{ $project->title }}</td>

@@ -89,11 +89,29 @@ class ProjectsController extends Controller
         $project = Project::find($id);
         $project->title = $request->title;
         $project->description = $request->description;
-        $project->position = $request->position;
         $project->color = $request->color;
         $project->bgcolor = $request->bgcolor;
 
+        // get current position and category of project
+        $currentPosition = $project->position;
+        $currentCategory = $project->category_id;
+        $requestPosition = $request->position;
+
+        // Select project currently residing on that position ...
+        $swap_project = Project::where('category_id', $currentCategory)
+                               ->where('position', $requestPosition)
+                               ->first();
+
+        // Set position of swap_project to an untaken position
+        $swap_project->position = Project::all()->count() + 1;
+        $swap_project->save();
+
+        // Position 
+        $project->position = $requestPosition;
+        $swap_project->position = $currentPosition;
+
         if($project->save()){
+            $swap_project->save();
             flash()->success('Project updated successfully!');
         }
         else{

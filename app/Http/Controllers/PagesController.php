@@ -30,7 +30,7 @@ class PagesController extends Controller
     {
         $users = User::where('id', '<>', 1)->get();
         $categories = Category::all();
-        $projects = Project::all();
+        $projects = Project::orderBy('position', 'asc')->get();
         $images = Image::all();
 
         return view('pages/backend')

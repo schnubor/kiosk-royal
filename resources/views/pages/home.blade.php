@@ -25,14 +25,14 @@
     {{-- Projects --}}
     @if(!empty($categories))
         @foreach($categories as $category)
-            @if(!empty($category->projects->first()->bgcolor))
-                <section class="category" id="{{$category->title}}" style="color: {{ $category->color }}; background-color: {{ $category->projects->first()->bgcolor }};">
+            @if(!empty($category->projects->sortBy('position')->first()->bgcolor))
+                <section class="category" id="{{$category->title}}" style="color: {{ $category->color }}; background-color: {{ $category->projects->sortBy('position')->first()->bgcolor }};">
             @else
                 <section class="category" id="{{$category->title}}" style="color: {{ $category->color }}; background-color: white;">
             @endif
                 <h2>{{ $category->title }}</h2>
                 @if(!empty($category->projects))
-                    @foreach($category->projects as $project)
+                    @foreach($category->projects->sortBy('position') as $project)
                         <section class="project" style="background-color: {{ $project->bgcolor }}; color: {{ $project->color }};">
                             <div class="container1280">
                                 <h3>{{ $project->title }}</h3>
