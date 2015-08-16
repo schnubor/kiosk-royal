@@ -116,12 +116,27 @@ class ImagesController extends Controller
         $image = Image::find($id);
         $filename = substr($image->filename, 0, -4);
         $extension = substr($image->filename, -3);
-        unlink(public_path().'/uploads/'.$image->filename);
-        unlink(public_path().'/uploads/'.$filename.'_640.'.$extension);
-        unlink(public_path().'/uploads/'.$filename.'_1280.'.$extension);
-        unlink(public_path().'/uploads/'.$filename.'_1920.'.$extension);
-        unlink(public_path().'/uploads/'.$filename.'_2560.'.$extension);
         $image->delete();
+
+        if(file_exists(public_path().'/uploads/'.$image->filename)){
+            unlink(public_path().'/uploads/'.$image->filename);
+        }
+
+        if(file_exists(public_path().'/uploads/'.$filename.'_640.'.$extension)){
+            unlink(public_path().'/uploads/'.$filename.'_640.'.$extension);
+        }
+
+        if(file_exists(public_path().'/uploads/'.$filename.'_1280.'.$extension)){
+            unlink(public_path().'/uploads/'.$filename.'_1280.'.$extension);
+        }
+
+        if(file_exists(public_path().'/uploads/'.$filename.'_1920.'.$extension)){
+            unlink(public_path().'/uploads/'.$filename.'_1920.'.$extension);
+        }
+
+        if(file_exists(public_path().'/uploads/'.$filename.'_2560.'.$extension)){
+            unlink(public_path().'/uploads/'.$filename.'_2560.'.$extension);
+        }
 
         flash()->info('Image deleted successfully.');
         return redirect(route('backend'));
