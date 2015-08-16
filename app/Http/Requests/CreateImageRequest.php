@@ -25,6 +25,7 @@ class CreateImageRequest extends Request
     {
         return [
             'imageFile' => 'required',
+            'imageFile' => 'mimes:jpg,png',
             'project_id' => 'required'
         ];
     }
