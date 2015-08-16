@@ -58,41 +58,47 @@ replaceImages = (retina) ->
             if retina
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/1920')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_1920.'+extension)
             else
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/960')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_1280.'+extension)
         when 640
             if retina
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/1280')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_1280.'+extension)
             else
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/640')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_640.'+extension)
         else
             if retina
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/800')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_640.'+extension)
             else
                 images = $('.js-resize')
                 $.each images, ->
-                    filename = $(this).data('file')
-                    filename = filename.substring(0, filename.length - 4)
-                    $(this).attr('src', '/resizer/'+filename+'/400')
+                    file = $(this).data('file')
+                    filename = file.substr(0, file.length - 4)
+                    extension = file.substr(file.length - 3)
+                    $(this).attr('src', '/uploads/'+filename+'_640.'+extension)
 
 retina = isRetinaDisplay()
 replaceImages(retina)

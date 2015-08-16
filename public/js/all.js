@@ -11619,18 +11619,20 @@ f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f
         if (retina) {
           images = $('.js-resize');
           return $.each(images, function() {
-            var filename;
-            filename = $(this).data('file');
-            filename = filename.substring(0, filename.length - 4);
-            return $(this).attr('src', '/resizer/' + filename + '/1920');
+            var extension, file, filename;
+            file = $(this).data('file');
+            filename = file.substr(0, file.length - 4);
+            extension = file.substr(file.length - 3);
+            return $(this).attr('src', '/uploads/' + filename + '_1920.' + extension);
           });
         } else {
           images = $('.js-resize');
           return $.each(images, function() {
-            var filename;
-            filename = $(this).data('file');
-            filename = filename.substring(0, filename.length - 4);
-            return $(this).attr('src', '/resizer/' + filename + '/960');
+            var extension, file, filename;
+            file = $(this).data('file');
+            filename = file.substr(0, file.length - 4);
+            extension = file.substr(file.length - 3);
+            return $(this).attr('src', '/uploads/' + filename + '_1280.' + extension);
           });
         }
         break;
@@ -11638,18 +11640,20 @@ f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f
         if (retina) {
           images = $('.js-resize');
           return $.each(images, function() {
-            var filename;
-            filename = $(this).data('file');
-            filename = filename.substring(0, filename.length - 4);
-            return $(this).attr('src', '/resizer/' + filename + '/1280');
+            var extension, file, filename;
+            file = $(this).data('file');
+            filename = file.substr(0, file.length - 4);
+            extension = file.substr(file.length - 3);
+            return $(this).attr('src', '/uploads/' + filename + '_1280.' + extension);
           });
         } else {
           images = $('.js-resize');
           return $.each(images, function() {
-            var filename;
-            filename = $(this).data('file');
-            filename = filename.substring(0, filename.length - 4);
-            return $(this).attr('src', '/resizer/' + filename + '/640');
+            var extension, file, filename;
+            file = $(this).data('file');
+            filename = file.substr(0, file.length - 4);
+            extension = file.substr(file.length - 3);
+            return $(this).attr('src', '/uploads/' + filename + '_640.' + extension);
           });
         }
         break;
@@ -11657,18 +11661,20 @@ f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f
         if (retina) {
           images = $('.js-resize');
           return $.each(images, function() {
-            var filename;
-            filename = $(this).data('file');
-            filename = filename.substring(0, filename.length - 4);
-            return $(this).attr('src', '/resizer/' + filename + '/800');
+            var extension, file, filename;
+            file = $(this).data('file');
+            filename = file.substr(0, file.length - 4);
+            extension = file.substr(file.length - 3);
+            return $(this).attr('src', '/uploads/' + filename + '_640.' + extension);
           });
         } else {
           images = $('.js-resize');
           return $.each(images, function() {
-            var filename;
-            filename = $(this).data('file');
-            filename = filename.substring(0, filename.length - 4);
-            return $(this).attr('src', '/resizer/' + filename + '/400');
+            var extension, file, filename;
+            file = $(this).data('file');
+            filename = file.substr(0, file.length - 4);
+            extension = file.substr(file.length - 3);
+            return $(this).attr('src', '/uploads/' + filename + '_640.' + extension);
           });
         }
     }
