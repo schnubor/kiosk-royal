@@ -10,8 +10,8 @@
             <li class="cat js-closeNav"><a href="#{{$category->title}}">{{ $category->title }}</a></li>
         @endforeach
         <li class="devider"></li>
-        <li class="js-kontakt">Kontakt</li>
-        <li class="js-imprint">Impressum</li>
+        <li class="js-kontakt"><span>Kontakt</span></li>
+        <li class="js-imprint"><span>Impressum</span></li>
         <li><a href="https://www.facebook.com/KIOSKROYAL" target="_blank">Facebook</a></li>
     </ul>
 </div>
