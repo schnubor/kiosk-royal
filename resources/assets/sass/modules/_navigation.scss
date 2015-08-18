@@ -27,6 +27,7 @@ nav{
         list-style-type: none;
         margin-left: 80px;
         padding: 0;
+        text-align: right;
 
         li{
             cursor: pointer;
@@ -35,14 +36,14 @@ nav{
             line-height: 40px;
             font-size: 14px;
             text-transform: uppercase;
-            margin-right: 70px;
+            margin-right: 68px;
             letter-spacing: 1px;
             transition: .2s all;
             border-bottom: none;
 
             // Macbook
             @media only screen and (max-width: 1280px){
-                margin-right: 33px;
+                margin-right: 32px;
                 font-size: 12px;
             }
 

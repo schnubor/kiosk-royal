@@ -11584,7 +11584,7 @@ f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f
   $(window).scroll(function() {
     if ($(window).scrollTop() > winHeight - 1) {
       $('nav').fadeIn();
-      return $('.mobile-nav-toggle').find('.bar').css('background-color', 'white');
+      return $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777');
     } else {
       $('nav').fadeOut();
       return $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777');

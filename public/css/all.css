@@ -7222,7 +7222,8 @@ nav {
   nav .menu {
     list-style-type: none;
     margin-left: 80px;
-    padding: 0; }
+    padding: 0;
+    text-align: right; }
     nav .menu li {
       cursor: pointer;
       display: inline-block;
@@ -7230,13 +7231,13 @@ nav {
       line-height: 40px;
       font-size: 14px;
       text-transform: uppercase;
-      margin-right: 70px;
+      margin-right: 68px;
       letter-spacing: 1px;
       transition: .2s all;
       border-bottom: none; }
       @media only screen and (max-width: 1280px) {
         nav .menu li {
-          margin-right: 33px;
+          margin-right: 32px;
           font-size: 12px; } }
       nav .menu li:last-child {
         padding-right: 0;

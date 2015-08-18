@@ -32,7 +32,7 @@ $(window).scroll ->
         # show nav
         $('nav').fadeIn()
         # change background color of mobile nav
-        $('.mobile-nav-toggle').find('.bar').css('background-color', 'white')
+        $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777')
     else
         $('nav').fadeOut()
         $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777')
