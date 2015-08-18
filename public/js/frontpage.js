@@ -34,10 +34,10 @@
   $(window).scroll(function() {
     if ($(window).scrollTop() > winHeight - 1) {
       $('nav').fadeIn();
-      return $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777');
+      return $('.mobile-nav-toggle').find('.bar').css('background-color', '#999999');
     } else {
       $('nav').fadeOut();
-      return $('.mobile-nav-toggle').find('.bar').css('background-color', '#777777');
+      return $('.mobile-nav-toggle').find('.bar').css('background-color', '#999999');
     }
   });
 
