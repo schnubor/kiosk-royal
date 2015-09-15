@@ -15,7 +15,7 @@
                     {!! Form::label('position') !!}
                     <select name="position" class="form-control js-position">
                         <option disabled selected>Choose position</option>
-                        @for($i = 1; $i <= $categories->count()+1; $i++)
+                        @for($i = 1; $i <= $categories->count(); $i++)
                             <option value="{{ $i }}">Position {{ $i }}</option>
                         @endfor
                     </select>

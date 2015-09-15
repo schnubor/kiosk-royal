@@ -11707,17 +11707,32 @@ f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(e,a,c,b,d,f
   });
 
   $('#projectModal').on('show.bs.modal', function(event) {
-    var button, id;
+    var button, catId, id;
     button = $(event.relatedTarget);
     id = button.data('id');
+    catId = button.data('categoryid');
     return $.getJSON('/project/' + id, function(data) {
       $('#projectModal').find('.js-form').attr('action', '/project/' + data.id + '/edit');
       $('#projectModal').find('.js-title').val(data.title);
       $('#projectModal').find('.js-description').val(data.description);
       $('#projectModal').find('.js-position').val(data.position);
       $('#projectModal').find('.js-color').val(data.color);
-      return $('#projectModal').find('.js-bgcolor').val(data.bgcolor);
+      $('#projectModal').find('.js-bgcolor').val(data.bgcolor);
+      return $.getJSON('/category/' + catId, function(data) {
+        var i, len, project, ref, results;
+        ref = data.projects;
+        results = [];
+        for (i = 0, len = ref.length; i < len; i++) {
+          project = ref[i];
+          results.push($('#projectModal').find('.js-position').append('<option value="' + project.position + '">Position ' + project.position + '</option>'));
+        }
+        return results;
+      });
     });
+  });
+
+  $('#projectModal').on('hidden.bs.modal', function(event) {
+    return $('#projectModal').find('.js-position').html('<option disabled selected>Choose position</option>');
   });
 
 }).call(this);
