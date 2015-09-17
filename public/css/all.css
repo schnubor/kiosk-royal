@@ -7166,7 +7166,7 @@ header {
   left: 15px;
   cursor: pointer;
   display: none; }
-  @media only screen and (max-width: 640px) {
+  @media only screen and (max-width: 960px) {
     .mobile-nav-toggle {
       display: block; } }
   .mobile-nav-toggle .bar {
