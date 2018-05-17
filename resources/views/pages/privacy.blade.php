@@ -80,7 +80,9 @@
         <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich direkt an die für den Datenschutz verantwortliche Person in unserer Organisation:</p>
         <p>Carsten Aermes 
         <br>Lychener Straße 71 
-        <br>10437 Berlin</p>
+        <br>10437 Berlin
+        <br>carsten@kiosk-royal.com
+        </p>
         <br>
         <br>
         <br>
