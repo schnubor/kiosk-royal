@@ -23,6 +23,11 @@ Route::get('/backend', [
     'uses' => 'PagesController@backend'
 ]);
 
+Route::get('/privacy', [
+    'as' => 'privacy',
+    'uses' => 'PagesController@privacy'
+]);
+
 /* Session */
 get('/login', [
     'as' => 'login',

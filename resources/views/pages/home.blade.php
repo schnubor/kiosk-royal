@@ -49,13 +49,7 @@
     @endif
 
     {{-- Footer --}}
-    <footer id="footer" class="text-center">
-        <ul>
-            <li class="js-kontakt">Kontakt</li>
-            <li class="js-imprint">Impressum</li>
-            <li><a href="https://www.facebook.com/KIOSKROYAL" target="_blank">Facebook</a></li>
-        </ul>
-    </footer>
+    @include('partials.footer')
 
     {{-- Popups --}}
     @include('partials.kontakt')

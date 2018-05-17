@@ -24,6 +24,16 @@ class PagesController extends Controller
     }
 
     /**
+     * Display Privacy Page.
+     */
+    public function privacy()
+    {
+        $categories = Category::all();
+        return view('pages/privacy')
+            ->with('categories', $categories);
+    }
+
+    /**
      * Display Backend Area.
      */
     public function backend()

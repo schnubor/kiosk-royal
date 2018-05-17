@@ -59,11 +59,11 @@ window.cookieconsent.initialise({
       "text": "#ffffff"
     }
   },
-  "showLink": false,
   "theme": "edgeless",
   "content": {
-    "message": "This website uses cookies to ensure you get the best experience on our website.",  
-    "href": "www.example.com"
+    "message": "Diese Website benutzt Cookies. Durch die weitere Nutzung der Website stimmen Sie der Verwendung von Cookies zu. Mehr unter:",
+    "link": "Datenschutzerklärung",
+    "href": "/privacy"
   }
 })});
 </script>
