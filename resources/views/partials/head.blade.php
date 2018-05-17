@@ -52,11 +52,11 @@ window.addEventListener("load", function(){
 window.cookieconsent.initialise({
   "palette": {
     "popup": {
-      "background": "#edeff5",
-      "text": "#838391"
+      "background": "#ebebeb"
     },
     "button": {
-      "background": "#4b81e8"
+      "background": "#b69d2c",
+      "text": "#ffffff"
     }
   },
   "showLink": false,
