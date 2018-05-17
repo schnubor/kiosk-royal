@@ -43,3 +43,27 @@
 <meta name="twitter:description" content="Kiosk Royal are Carsten Aermes and Hanna Zeckau who studied visual communication at Berlin's finest art school KHB. Our work focuses both on illustration and graphic design – such as editorial, logo, web and book design."> 
 <meta name="twitter:image" content="http://www.kiosk-royal.com/images/fb.png"> 
 <meta itemprop="image" content="http://www.kiosk-royal.com/images/fb.jpg">
+
+{{-- Cookie Message --}}
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#edeff5",
+      "text": "#838391"
+    },
+    "button": {
+      "background": "#4b81e8"
+    }
+  },
+  "showLink": false,
+  "theme": "edgeless",
+  "content": {
+    "message": "This website uses cookies to ensure you get the best experience on our website.",  
+    "href": "www.example.com"
+  }
+})});
+</script>
